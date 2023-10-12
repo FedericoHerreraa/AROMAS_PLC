@@ -1,4 +1,3 @@
-import React from "react"
 import './header.css'
 
 const Header = () => {
@@ -17,7 +16,7 @@ const Header = () => {
             <div className="inicio">
                 <div className="titleContainer">
                     <p>Bienvenidos</p>
-                    <h1>AROMAS PLC</h1>
+                    <h1>Aromas PLC</h1>
                 </div>
             </div>
             <div className="verMas">

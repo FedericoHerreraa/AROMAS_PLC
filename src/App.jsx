@@ -1,9 +1,13 @@
-import React from "react"
+
 import Header from "./components/header/header"
+import Eventos from "./components/eventos/eventos"
 
 function App() {
   return (
-    <Header/>
+    <div>
+      <Header/>
+      <Eventos/>
+    </div>
   )
 }
 

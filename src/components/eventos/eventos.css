@@ -1,0 +1,38 @@
+.eventosContainer{
+    margin: 40px 20px;
+    height: 400px;
+    background-color: rgb(240, 221, 233);
+    display: flex;
+    justify-content: space-between;
+}
+
+.eventosContainer div h2{
+    font-size: 50px;
+    width: 80%;
+}
+.eventosContainer div{
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.eventosContainer p{
+    font-size:xx-large;
+}
+.eventosContainer a{
+    font-size:large;
+    background-color: white;
+    padding: 10px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    width: 20%;
+    align-items: center;
+    color: black;
+}
+.fotoevento{
+    background-image: url("/src/img/foto_dif.jpg");
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    margin-right: 30px;
+}
