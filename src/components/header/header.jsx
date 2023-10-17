@@ -12,8 +12,7 @@ const Header = () => {
                 <div className="navInfo">
                     <p className='links'>Productos</p>
                     <p className='links'>Eventos</p>
-                    <Link to="/contactanos" className='links'>Contacto</Link>
-                    
+                    <Link to="/contactanos" className='links'>Contacto</Link>   
                 </div>
             </nav>
             <div className="inicio">
