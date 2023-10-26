@@ -1,4 +1,4 @@
-import { getDocs, collection, QuerySnapshot } from 'firebase/firestore'
+import { getDocs, collection, doc, getDoc } from 'firebase/firestore'
 import { db } from '../../firebase/firebaseConfig'
 
 export const getProducts = () => {
@@ -13,6 +13,19 @@ export const getProducts = () => {
             return productsAdapted
         })
         .catch((error) => {
+            console.log(error)
+        })
+}
+
+export const getProductById = (id) => {
+    const productRef = doc(db, 'productos', id)
+    return getDoc(productRef)
+        .then(res => {
+            const data = res.data()
+            const productAdapted = { id: res.id, ...data }
+            return productAdapted
+        })
+        .catch(error => {
             console.log(error)
         })
 }
