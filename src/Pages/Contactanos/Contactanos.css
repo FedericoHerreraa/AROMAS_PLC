@@ -1,12 +1,42 @@
 .contactanosContainer{
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
 
 .form{
     display: flex;
+    flex-direction: column;
+    width: 40%;
     align-items: center;
-    justify-content: center;
+    background-color: grey;
+    border-radius: 10px;
+    min-height: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    color: white;
+}
+
+.form div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form div input {
+    padding: 5px;
+}
+
+.btnEnviar {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btnEnviar:hover {
     background-color: black;
     color: white;
 }

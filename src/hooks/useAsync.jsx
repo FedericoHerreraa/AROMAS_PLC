@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-export const useAsync = (asyncFunction) => {
+export const useAsync = (asyncFunction, dependencies = []) => {
     const [products, setProducts] = useState([])
     const [error, setError] = useState(null)
 
@@ -14,7 +14,7 @@ export const useAsync = (asyncFunction) => {
                 setError(error)
             })
 
-    }, [])
+    }, [...dependencies])
 
     return [products,error]
 }

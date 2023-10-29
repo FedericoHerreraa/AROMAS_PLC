@@ -4,17 +4,21 @@ import { useParams } from 'react-router-dom'
 import { useAsync } from '../../hooks/useAsync'
 
 const Detalle = () => {
-    const idProd = useParams()
+    const { id } = useParams()
+    const product = () => getProductById(id)
+    const [products, error] = useAsync(product, id)
 
-    console.log(idProd)
-    const product = () => getProductById(idProd)
-    const [products, error] = useAsync(product)
-
-    console.log(products)
+    if (error) {
+        <div>
+            <h1>Hubo un error con la carga del producto</h1>
+        </div>
+    }
 
     return (
         <div>
             <h1>Detalle de producto</h1>
+            <p>{products.nombre}</p>
+            <p>${products.precio}</p>
         </div>
     )
 }

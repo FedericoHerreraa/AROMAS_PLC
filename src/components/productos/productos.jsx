@@ -25,7 +25,7 @@ const Productos = () => {
                             <p>{prod.img}</p>
                             <p>{prod.nombre}</p>
                             <p>Precio: ${prod.precio}</p>
-                            <Link className="detalle" to={'/detalle/${prod.id}'}>Ver detalle</Link>
+                            <Link className="detalle" to={`/detalle/${prod.id}`}>Ver detalle</Link>
                         </div>
                     )
                 })}
