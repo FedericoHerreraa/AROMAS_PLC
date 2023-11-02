@@ -1,11 +1,17 @@
 .footercontainer{
-    background-color: rgb(37, 2, 34);
+    background-color: #800080;
     height: 150px;
     width: 100%;
    
 }
 
 .footer-content{
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    color: #1a001a;
+    margin-bottom: 40px;
 }

@@ -11,6 +11,7 @@
 .eventosContainer div h2{
     font-size: 50px;
     width: 80%;
+    color: #1a001a;
 }
 .eventosContainer div{
     margin-left: 100px;
@@ -20,6 +21,7 @@
 }
 .eventosContainer p{
     font-size:xx-large;
+    color:  #1a001a;
 }
 .eventosContainer a{
     display: flex;
