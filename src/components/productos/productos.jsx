@@ -22,7 +22,6 @@ const Productos = () => {
                 {productos.map(prod => {
                     return (
                         <div key={prod.id} className="prod">
-                            <p>{prod.img}</p>
                             <p>{prod.nombre}</p>
                             <p>Precio: ${prod.precio}</p>
                             <Link className="detalle" to={`/detalle/${prod.id}`}>Ver detalle</Link>
