@@ -1,5 +1,11 @@
 .footercontainer{
     background-color: rgb(37, 2, 34);
-    height: 80px;
+    height: 150px;
     width: 100%;
+   
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
 }
