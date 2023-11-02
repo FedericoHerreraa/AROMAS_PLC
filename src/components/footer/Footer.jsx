@@ -1,7 +1,8 @@
 import "./Footer.css"
-import {BiLogoGmail} from "react-icons/bi"
-import {PiMapPinFill} from "react-icons/pi"
-import {AiOutlineInstagram} from "react-icons/ai"
+import { BiLogoGmail } from "react-icons/bi"
+import { PiMapPinFill } from "react-icons/pi"
+import { AiOutlineInstagram } from "react-icons/ai"
+
 const Footer = () => {
   return (
     <div className='footercontainer'> 
@@ -9,8 +10,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="contact-info">
           <h4>Contacto</h4>
-          <div>
-              
+          <div>              
             <p> <BiLogoGmail/> aromass.plc@gmail.com</p>
           </div>
           <p><PiMapPinFill/> Monte Castro, CABA</p>

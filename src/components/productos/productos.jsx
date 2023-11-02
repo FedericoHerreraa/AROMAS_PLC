@@ -22,7 +22,7 @@ const Productos = () => {
         {productos.map((prod) => {
           return (
             <div key={prod.id} className="prod">
-                <img src={prod.img} className="img" alt="no se pudo cargar la img" />
+                <img src={prod.img} className="img" alt="No se pudo cargar la imagen"/>
                 <p>{prod.nombre}</p>
                 <p>Precio: ${prod.precio}</p>
                 <Link className="detalle" to={`/detalle/${prod.id}`}>
