@@ -7,20 +7,19 @@
 .form{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     align-items: center;
-    background-color: grey;
     border-radius: 10px;
     min-height: 200px;
-    border: 1px solid black;
     padding: 10px;
-    color: white;
+    
 }
 
 .form div {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
 .form div input {
@@ -28,7 +27,7 @@
 }
 
 .btnEnviar {
-    padding: 5px 10px 5px 10px;
+    padding: 10px 60px;
     border-radius: 5px;
     border: none;
     margin-top: 10px;
@@ -37,10 +36,38 @@
 }
 
 .btnEnviar:hover {
-    background-color: black;
+    background-color: darkorchid;
     color: white;
 }
 
 .info{
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info div h2{
+    color: darkorchid;
+    font-size: 40px;
+}
+.red{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+
+.red p{
+    font-size: larger;
+    margin-left: 10px;
+}
+
+.botonVolver{
+    background-color: darkorchid;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    
 }
