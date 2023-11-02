@@ -9,30 +9,11 @@ const Productos = () => {
 
   if (error) {
     return (
-<<<<<<< HEAD
-        <div className="container">
-            <h1 className="tituloProds">Productos</h1>
-            <div className="containerProd">
-                {productos.map(prod => {
-                    return (
-                        <div key={prod.id} className="prod">
-                            <p>{prod.nombre}</p>
-                            <p>Precio: ${prod.precio}</p>
-                            <Link className="detalle" to={`/detalle/${prod.id}`}>Ver detalle</Link>
-                        </div>
-                    )
-                })}
-            </div>
-        </div>
-    )
-}
-=======
       <div>
         <h1>Ha ocurrido un error: {error}</h1>
       </div>
     );
   }
->>>>>>> ff53e0c7733baa997a9585ada227d3b45f1cd568
 
   return (
     <div className="container">
