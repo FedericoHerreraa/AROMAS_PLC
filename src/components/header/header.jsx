@@ -1,13 +1,13 @@
 import './header.css'
 import { Link } from 'react-router-dom'
-import React from 'react'
+import "../../App.css"
 
 const Header = () => {
     return (
         <>
             <nav className="navContainer">
                 <div className="navTitle">
-                    <p>Aromas PLC</p>
+                    <p className='Tangerine'>Aromas PLC</p>
                 </div>
                 <div className="navInfo">
                     <p className='links'>Productos</p>
@@ -19,7 +19,7 @@ const Header = () => {
             <div className="inicio">
                 <div className="titleContainer">
                     <p>Bienvenidos</p>
-                    <h1>Aromas PLC</h1>
+                    <h1 className='Tangerine'>Aromas PLC</h1>
                 </div>
             </div>
             <div className="verMas">

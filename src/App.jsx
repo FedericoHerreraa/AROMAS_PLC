@@ -4,6 +4,7 @@ import Home from "./Pages/home/Home"
 import Detalle from "./Pages/detalle/detalle"
 import { CartProvider } from "./context/CartContext"
 
+
 function App() {
   return (
     <BrowserRouter> 

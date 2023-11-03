@@ -48,7 +48,7 @@
 .navTitle {
     margin-left: 20px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 700;
 }
 
@@ -69,7 +69,10 @@
     flex-direction: column;
     align-items: flex-end;
 }
-
+.titleContainer h1{
+    font-size: 100px;
+    font-weight: 900;
+}
 .verMas {
     display: flex;
     position: absolute;
