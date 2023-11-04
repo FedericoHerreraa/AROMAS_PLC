@@ -34,6 +34,11 @@
     width: 20%;
     align-items: center;
     color: black;
+    transition: all 0.3s;
+}
+.eventosContainer a:hover{
+    background-color: rgb(207, 138, 192);
+    color: white;
 }
 .fotoevento{
     background-image: url("/src/img/foto_dif.jpg");

@@ -48,8 +48,8 @@
 .navTitle {
     margin-left: 20px;
     cursor: pointer;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 100;
 }
 
 .inicio {
@@ -70,8 +70,8 @@
     align-items: flex-end;
 }
 .titleContainer h1{
-    font-size: 100px;
-    font-weight: 900;
+    font-size: 80px;
+    font-weight: 100;
 }
 .verMas {
     display: flex;
@@ -80,9 +80,9 @@
     left: 75%;
     padding: 5px 30px 5px 30px;
     border-radius: 10px;
-    background-color: #ebd0a2;
+    background-color: #ffffff;
     cursor: pointer;
-    border: 1px solid white;
+    border: 1px solid rgb(207, 138, 192);
     transition: all 0.2s;
     align-items: center;
     justify-content: center;

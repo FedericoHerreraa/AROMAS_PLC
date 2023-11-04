@@ -7,7 +7,7 @@ const Header = () => {
         <>
             <nav className="navContainer">
                 <div className="navTitle">
-                    <p className='Tangerine'>Aromas PLC</p>
+                    <p className='Cinzel'>Aromas PLC</p>
                 </div>
                 <div className="navInfo">
                     <p className='links'>Productos</p>
@@ -19,7 +19,7 @@ const Header = () => {
             <div className="inicio">
                 <div className="titleContainer">
                     <p>Bienvenidos</p>
-                    <h1 className='Tangerine'>Aromas PLC</h1>
+                    <h1 className='Cinzel'>Aromas PLC</h1>
                 </div>
             </div>
             <div className="verMas">

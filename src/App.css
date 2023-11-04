@@ -2,7 +2,28 @@
     font-family: Tangerine;
     src: url(/src/assets/fonts/Tangerine-Bold.ttf);
 }
+@font-face {
+    font-family: Cinzel;
+    src: url(/src/assets/fonts/Cinzel-Regular.ttf);
+}
 
+@font-face {
+    font-family: Playfair;
+    src: url(/src/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Playfair-simple;
+    src: url(/src/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf);
+}
 .Tangerine{
     font-family: Tangerine;
+}
+.Cinzel{
+    font-family: Cinzel;
+}
+.PlayFair{
+    font-family: PlayFair;
+}
+.PlayFair-simple{
+    font-family: PlayFair-simple;
 }

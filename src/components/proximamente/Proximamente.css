@@ -1,0 +1,14 @@
+.proximo{
+    background-color: rgb(164, 76, 207);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.proximo h3{
+    font-size: x-large;
+    font-weight: 100;
+}
