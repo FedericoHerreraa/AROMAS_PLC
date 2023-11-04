@@ -21,10 +21,12 @@
 
 .links {
     margin-right: 30px;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     text-decoration: none;
     color: black;
+    font-family: Cinzel;
 }
 
 .links:hover {
@@ -73,6 +75,10 @@
     font-size: 80px;
     font-weight: 100;
 }
+.titleContainer p{
+    font-family: PlayFair;
+    font-weight: 300;
+}
 .verMas {
     display: flex;
     position: absolute;
@@ -82,7 +88,7 @@
     border-radius: 10px;
     background-color: #ffffff;
     cursor: pointer;
-    border: 1px solid rgb(207, 138, 192);
+    border: 1px solid white;
     transition: all 0.2s;
     align-items: center;
     justify-content: center;
@@ -91,6 +97,8 @@
 
 .verMas:hover {
     background-color: rgb(207, 138, 192);
+    border-color: rgb(207, 138, 192) ;
+    color: #ffffff;
 }
 
 .verMas p {
