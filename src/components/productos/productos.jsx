@@ -21,14 +21,13 @@ const Productos = () => {
       <div className="containerProd">
         {productos.map((prod) => {
           return (
-            <div key={prod.id} className="prod">
-                <img src={prod.img} className="img" alt="No se pudo cargar la imagen"/>
-                <p>{prod.nombre}</p>
-                <p>Precio: ${prod.precio}</p>
-                <Link className="detalle" to={`/detalle/${prod.id}`}>
-                    Ver detalle
-                </Link>
-            </div>
+            <Link key={prod.id} className="detalle" to={`/detalle/${prod.id}`}>
+              <div className="prod">
+                  <img src={prod.img} className="img" alt="No se pudo cargar la imagen"/>
+                  <p>{prod.nombre}</p>
+                  <p>Precio: ${prod.precio}</p>
+              </div>
+            </Link>
           );
         })}
       </div>
