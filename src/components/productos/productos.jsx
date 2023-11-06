@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Productos = () => {
   const products = () => getProducts();
-  const [productos, error] = useAsync(products);
+  const [productos, error, loading] = useAsync(products);
 
   if (error) {
     return (
@@ -13,6 +13,18 @@ const Productos = () => {
         <h1>Ha ocurrido un error: {error}</h1>
       </div>
     );
+  }
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="spinner">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden" style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px', fontSize: '30px' }}>Cargando...</span>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (

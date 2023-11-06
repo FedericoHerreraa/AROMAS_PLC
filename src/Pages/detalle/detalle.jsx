@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Detalle = () => {
   const { id } = useParams();
   const product = () => getProductById(id);
-  const [products, error] = useAsync(product, id);
+  const [products, error, loading] = useAsync(product, id);
 
   const [open,setOpen] = useState(false)
 
@@ -31,6 +31,18 @@ const Detalle = () => {
     <div>
       <h1>Hubo un error con la carga del producto</h1>
     </div>
+  }
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="spinner">
+          <div className="spinner-border" role="status">
+            <span className="visually-hidden" style={{ marginTop: '30px', marginLeft: '40px', fontSize: '30px' }}>Cargando...</span>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
