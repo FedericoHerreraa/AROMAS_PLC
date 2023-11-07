@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import "../../App.css"
 import React, { useState } from 'react'
 import { Modal } from '@mui/material'
+import Carrito from '../carrito/carrito'
+import { useCart } from '../../context/CartContext'
 
 const Header = () => {
     const [open,setOpen] = useState(false)
 
     const cerrarModal = () => setOpen(false)
+    const { vaciarCarrito } = useCart()
 
     const modal = () => {
         return (
@@ -16,8 +19,14 @@ const Header = () => {
                 className='containerCarrito'
                 onClose={cerrarModal}
                 >
-                <h1>Carrito de compras:</h1>
-            </Modal>
+                    <div>
+                        <h2 className='carritoTitle'>Carrito de compras</h2>
+                        <div>
+                            <Carrito/>
+                        </div>
+                        <button className='btnVaciarCarrito' onClick={vaciarCarrito}>Vaciar carrito</button>
+                    </div>
+            </Modal>         
         )
     }
 

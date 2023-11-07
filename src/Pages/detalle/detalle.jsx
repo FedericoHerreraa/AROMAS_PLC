@@ -5,11 +5,14 @@ import { useAsync } from "../../hooks/useAsync";
 import { useState } from "react";
 import { Modal } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
 const Detalle = () => {
   const { id } = useParams();
   const product = () => getProductById(id);
   const [products, error, loading] = useAsync(product, id);
+
+  const { addProd } = useCart()
 
   const [open,setOpen] = useState(false)
 
@@ -48,7 +51,7 @@ const Detalle = () => {
   return (
     <>
       <nav className="navContainer">
-        <Link to='/' style={{ textDecoration: 'none' }} className="navTitle">
+        <Link onClick={() => window.history.back()} style={{ textDecoration: 'none' }} className="navTitle">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALxJREFUSEvt0jFqAmEQhuHHQwRMn4hnEMFbCKmFXCdYC97FCLmDjb2QQ4SBLAQLZ343Cxa77b+878w338TA32RgvlGQJvyQEU3xho90fJqPHPBPvOIdu0zSElHAj3jBGQtc/kvwhK9f+AmrCjzklQ0CHrHMEfAlvrPJu/dM0Ate2WBwQQzRS5JF1EV5feTyHaqCEP2tablJLYJOcsAMG+yzNrUKgveMNbYZvNKiCuPmP/ds0CQdBWlcg0f0A4wQHhnVdK5sAAAAAElFTkSuQmCC"/> 
           <p className='Cinzel' style={{ color: 'black' }}>Aromas PLC</p>
         </Link>
@@ -66,7 +69,7 @@ const Detalle = () => {
           <div className="productoInfo">
             <h2>{products.nombre}</h2>
             <p>Precio: ${products.precio}</p>
-            <button className="botonCarrito">Agregar al carrito</button>
+            <button onClick={() => addProd(products)} className="botonCarrito">Agregar al carrito</button>
           </div>
         </div>
       </div>

@@ -6,20 +6,28 @@ export const CartContext = createContext({
 })
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState()
+    const [cart, setCart] = useState([])
 
     const addProd = (prod) => {
         !existe(prod.id) ? (
             setCart(prev => {
                 return [...prev, prod]
             })
-        ) : console.log('El producto ya esta en el carrito')
+        ) : (
+            console.log('El producto ya esta en el carrito')
+        )
     }
 
-    const existe = idProd => cart.some(prod => prod.id == idProd)
+    const existe = (idProd) => {
+        return cart.some(prod => prod.id === idProd)
+    }
+
+    const vaciarCarrito = () => {
+        setCart([])
+    }
 
     return (
-        <CartContext.Provider value={{ addProd, cart }}>
+        <CartContext.Provider value={{ addProd, cart, vaciarCarrito }}>
             {children}
         </CartContext.Provider>
     )
