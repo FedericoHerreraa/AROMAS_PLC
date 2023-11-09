@@ -1,7 +1,7 @@
 import './header.css'
 import { Link } from 'react-router-dom'
 import "../../App.css"
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Modal } from '@mui/material'
 import Carrito from '../carrito/carrito'
 import { useCart } from '../../context/CartContext'

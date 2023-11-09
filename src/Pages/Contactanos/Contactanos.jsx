@@ -4,6 +4,8 @@ import { Link } from "react-router-dom"
 import emailjs from '@emailjs/browser'
 import {AiFillInstagram, AiOutlineMail} from "react-icons/ai"
 import {BiSolidMap} from "react-icons/bi"
+import { Modal } from "@mui/material";
+import { useCart } from "../../context/CartContext";
 
 const Contactanos = () => {
     const [name,setName] = useState('')
@@ -13,6 +15,23 @@ const Contactanos = () => {
     const handleName = e => setName(e.target.value)
     const handleEmail = e => setEmail(e.target.value)
     const handleMessage = e => setMessage(e.target.value)
+    const { addProd } = useCart()
+    const [open,setOpen] = useState(false)
+
+    const cerrarModal = () => setOpen(false)
+
+    const modal = () => {
+        return (
+            <Modal
+                open={open}
+                className='containerCarrito'
+                onClose={cerrarModal}
+                >
+                <h1>Carrito de compras:</h1>
+            </Modal>
+        )
+    }
+
 
     const form = useRef()
 
@@ -32,7 +51,21 @@ const Contactanos = () => {
         setMessage('')
       }
 
-    return (
+    return (<>
+    
+        <nav className="navContainer">
+            <Link onClick={() => window.history.back()} style={{ textDecoration: 'none' }} className="navTitle">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALxJREFUSEvt0jFqAmEQhuHHQwRMn4hnEMFbCKmFXCdYC97FCLmDjb2QQ4SBLAQLZ343Cxa77b+878w338TA32RgvlGQJvyQEU3xho90fJqPHPBPvOIdu0zSElHAj3jBGQtc/kvwhK9f+AmrCjzklQ0CHrHMEfAlvrPJu/dM0Ate2WBwQQzRS5JF1EV5feTyHaqCEP2tablJLYJOcsAMG+yzNrUKgveMNbYZvNKiCuPmP/ds0CQdBWlcg0f0A4wQHhnVdK5sAAAAAElFTkSuQmCC"/> 
+                <p className='Cinzel' style={{ color: 'black' }}>Aromas PLC</p>
+            </Link>
+            <div className="navInfo">
+                <p className='links'>Productos</p>
+                <button className='btnCarrito' onClick={() => setOpen(true)}>Carrito</button> 
+                {modal()}
+                <p className='links'>Eventos</p>
+                <Link to="/contactanos" className='links'>Contacto</Link>   
+            </div>
+        </nav>
         <div className="contactanosContainer">
             <div className="info">
                 <div>
@@ -93,6 +126,7 @@ const Contactanos = () => {
                 <input className="btnEnviar" type="submit" value="Enviar" />
             </form>
         </div>
+    </>
     )
 }
 
