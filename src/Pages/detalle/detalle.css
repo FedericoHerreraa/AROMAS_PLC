@@ -87,3 +87,22 @@
     cursor: pointer;
     margin-top: 20px;
 }
+
+.carritoTitle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btnVaciarCarrito {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.btnVaciarCarrito:hover {
+    background-color: cadetblue;
+}
