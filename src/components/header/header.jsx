@@ -8,15 +8,9 @@ import { useCart } from "../../context/CartContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [vacio,setVacio] = useState(false)
-
-  if (cart.length == 0) {
-    
-  }
-
+  const { vaciarCarrito } = useCart();
   const cerrarModal = () => setOpen(false);
-  const { vaciarCarrito, cart } = useCart();
-
+  
   const modal = () => {
     return (
       <Modal open={open} className="containerCarrito" onClose={cerrarModal}>
@@ -25,11 +19,9 @@ const Header = () => {
           <div>
             <Carrito />
           </div>
-          {cart.lenght > 0 ? 
-            <button className="btnVaciarCarrito" onClick={vaciarCarrito}>
-                Vaciar carrito
-            </button>: <p></p> }
-            
+          <button className="btnVaciarCarrito" onClick={vaciarCarrito}>
+            Vaciar carrito
+          </button>
         </div>
       </Modal>
     );
