@@ -6,13 +6,14 @@ import { useState } from "react";
 import { Modal } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import Carrito from "../../components/carrito/carrito";
 
 const Detalle = () => {
   const { id } = useParams();
   const product = () => getProductById(id);
   const [products, error, loading] = useAsync(product, id);
 
-  const { addProd } = useCart()
+  const { addProd, vaciarCarrito } = useCart()
 
   const [open,setOpen] = useState(false)
 
@@ -25,7 +26,13 @@ const Detalle = () => {
                 className='containerCarrito'
                 onClose={cerrarModal}
                 >
-                <h1>Carrito de compras:</h1>
+                  <div>
+                    <h2 className='carritoTitle'>Carrito de compras</h2>
+                    <div>
+                      <Carrito/>
+                    </div>
+                    <button className='btnVaciarCarrito' onClick={vaciarCarrito}>Vaciar carrito</button>
+                  </div>
             </Modal>
         )
     }
