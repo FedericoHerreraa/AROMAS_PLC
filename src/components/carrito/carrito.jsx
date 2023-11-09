@@ -3,7 +3,6 @@ import './carrito.css'
 
 const Carrito = () => {
     const { cart } = useCart()
-    console.log(cart)
 
     if (cart.length == 0) {
         return (

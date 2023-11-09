@@ -87,28 +87,6 @@
     cursor: pointer;
     margin-top: 20px;
 }
-<<<<<<< HEAD
 .containerCarrito{
     background-color: rgb(201, 64, 166);
 }
-=======
-
-.carritoTitle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.btnVaciarCarrito {
-    padding: 5px 10px 5px 10px;
-    border-radius: 5px;
-    border: 1px solid grey;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-size: 16px;
-}
-
-.btnVaciarCarrito:hover {
-    background-color: cadetblue;
-}
->>>>>>> 35598779d10b04387730b15aa6e077b9db7f8a06
