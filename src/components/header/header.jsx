@@ -28,6 +28,20 @@ const Header = () => {
     );
   };
 
+  const desplazamientoProds = () => {
+    window.scrollTo({
+      top: window.innerHeight + 450,
+      behavior: 'smooth'
+    })
+  }
+
+  const desplazamiento = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <>
       <nav className="navContainer">
@@ -35,7 +49,7 @@ const Header = () => {
           <p className="Cinzel">Aromas PLC</p>
         </div>
         <div className="navInfo">
-          <p className="links">Productos</p>
+          <button className="btnCarrito" onClick={desplazamientoProds}>Productos</button>
           <button className="btnCarrito" onClick={() => setOpen(true)}>
             Carrito
           </button>
@@ -52,7 +66,7 @@ const Header = () => {
           <h1 className="Cinzel">Aromas PLC</h1>
         </div>
       </div>
-      <div className="verMas">
+      <div className="verMas" onClick={desplazamiento}>
         <p>Ver mas</p>
       </div>
     </>
