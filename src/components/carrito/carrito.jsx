@@ -1,5 +1,5 @@
 import { useCart } from "../../context/CartContext";
-import "./carrito.css";
+import stylesCarrito from "./carrito.module.css";
 
 const Carrito = () => {
   const { cart } = useCart();
@@ -10,12 +10,12 @@ const Carrito = () => {
   }
 
   return (
-    <div className="contenedorCarrito">
+    <div className={stylesCarrito.contenedorCarrito}>
       {cart.map((prod) => {
         return (
-          <div key={prod.id} className="contenedorProduct">
+          <div key={prod.id} className={stylesCarrito.contenedorProduct}>
             <img src={prod.img} alt="" />
-            <div className="productInfo">
+            <div className={stylesCarrito.productInfo}>
               <p>{prod.nombre}</p>
               <p>Precio: ${prod.precio}</p>
             </div>

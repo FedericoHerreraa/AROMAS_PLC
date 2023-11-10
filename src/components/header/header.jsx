@@ -1,4 +1,4 @@
-import "./header.css";
+import stylesHeader from "./header.module.css";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import { useState } from "react";
@@ -14,16 +14,15 @@ const Header = () => {
   
   const modal = () => {
     return (
-      <Modal open={open} className="containerCarrito" onClose={cerrarModal}>
+      <Modal open={open} className={stylesHeader.containerCarrito} onClose={cerrarModal}>
         <Box>
-          <div style={{backgroundColor: "white", height: "100%"}}>
-            <h2 className="carritoTitle">Carrito de compras</h2>
+          <div>
+            <h2 className={stylesHeader.carritoTitle}>Carrito de compras</h2>
             <div>
               <Carrito />
             </div>
           </div>
         </Box>
-          
       </Modal>
     );
   };
@@ -44,29 +43,29 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navContainer">
-        <div className="navTitle">
+      <nav className={stylesHeader.navContainer}>
+        <div className={stylesHeader.navTitle}>
           <p className="Cinzel">Aromas PLC</p>
         </div>
-        <div className="navInfo">
-          <button className="btnCarrito" onClick={desplazamientoProds}>Productos</button>
-          <button className="btnCarrito" onClick={() => setOpen(true)}>
+        <div className={stylesHeader.navInfo}>
+          <button className={stylesHeader.btnCarrito} onClick={desplazamientoProds}>Productos</button>
+          <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>
             Carrito
           </button>
           {modal()}
-          <p className="links">Eventos</p>
-          <Link to="/contactanos" className="links">
+          <p className={stylesHeader.links}>Eventos</p>
+          <Link to="/contactanos" className={stylesHeader.links}>
             Contacto
           </Link>
         </div>
       </nav>
-      <div className="inicio">
-        <div className="titleContainer">
+      <div className={stylesHeader.inicio}>
+        <div className={stylesHeader.titleContainer}>
           <p>Bienvenidos</p>
           <h1 className="Cinzel">Aromas PLC</h1>
         </div>
       </div>
-      <div className="verMas" onClick={desplazamiento}>
+      <div className={stylesHeader.verMas} onClick={desplazamiento}>
         <p>Ver mas</p>
       </div>
     </>

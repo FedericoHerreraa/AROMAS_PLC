@@ -1,6 +1,6 @@
 import { useAsync } from "../../hooks/useAsync";
 import { getProducts } from "../../products/products";
-import "./productos.css";
+import stylesProducts from "./productos.module.css";
 import { Link } from "react-router-dom";
 
 const Productos = () => {
@@ -28,14 +28,14 @@ const Productos = () => {
   }
 
   return (
-    <div className="container">
-      <h1 className="tituloProds">Nuestros Productos</h1>
-      <div className="containerProd">
+    <div className={stylesProducts.container}>
+      <h1 className={stylesProducts.tituloProds}>Nuestros Productos</h1>
+      <div className={stylesProducts.containerProd}>
         {productos.map((prod) => {
           return (
-            <Link key={prod.id} className="detalle" to={`/detalle/${prod.id}`}>
-              <div className="prod">
-                  <img src={prod.img} className="img" alt="No se pudo cargar la imagen"/>
+            <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
+              <div className={stylesProducts.prod}>
+                  <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
                   <p>{prod.nombre}</p>
                   <p>Precio: ${prod.precio}</p>
               </div>

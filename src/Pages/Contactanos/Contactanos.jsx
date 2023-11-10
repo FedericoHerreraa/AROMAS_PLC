@@ -2,8 +2,9 @@ import styleContacto from "./Contactanos.module.css"
 import { useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import emailjs from '@emailjs/browser'
-import {AiFillInstagram, AiOutlineMail} from "react-icons/ai"
-import {BiSolidMap} from "react-icons/bi"
+import { AiFillInstagram, AiOutlineMail } from "react-icons/ai"
+import { BiSolidMap } from "react-icons/bi"
+import Swal from 'sweetalert2'
 
 
 const Contactanos = () => {
@@ -25,7 +26,7 @@ const Contactanos = () => {
                 console.log(res.text);
             })    
             .catch((error) => {
-              console.log(error.text);
+                console.log(error.text);
             })
 
         setEmail('')
@@ -98,7 +99,19 @@ const Contactanos = () => {
                         
                     />
                 </div>
-                <input className={styleContacto.btnEnviar} type="submit" value="Enviar" />
+                <input 
+                    className={styleContacto.btnEnviar} 
+                    type="submit" 
+                    value="Enviar"
+                    onClick={() => {
+                        Swal.fire({
+                            title: 'Se ha enviado el mensaje!',
+                            text: 'Deseas continuar?',
+                            icon: 'success',
+                            confirmButtonText: 'Aceptar'
+                          })
+                    }} 
+                    />
             </form>
         </div>
     </>
