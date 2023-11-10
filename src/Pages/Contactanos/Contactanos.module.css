@@ -115,3 +115,19 @@
 .btnCarrito:hover {
     text-decoration: underline;
 }
+
+
+.navTitle {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+}
+
+.navTitle img {
+    height: 25px;
+    margin-top: 10px;
+    width: 25px;
+}
