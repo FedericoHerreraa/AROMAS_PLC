@@ -13,7 +13,7 @@ const Detalle = () => {
   const product = () => getProductById(id);
   const [products, error, loading] = useAsync(product, id);
 
-  const { addProd, vaciarCarrito } = useCart()
+  const { addProd } = useCart()
 
   const [open,setOpen] = useState(false)
 
@@ -31,7 +31,6 @@ const Detalle = () => {
                     <div>
                       <Carrito/>
                     </div>
-                    <button className='btnVaciarCarrito' onClick={vaciarCarrito}>Vaciar carrito</button>
                   </div>
             </Modal>
         )
