@@ -2,27 +2,28 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import { useState } from "react";
-import { Modal } from "@mui/material";
+import  Modal  from "@mui/material/Modal";
+import Box from "@mui/material/Box"
 import Carrito from "../carrito/carrito";
-import { useCart } from "../../context/CartContext";
+
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const { vaciarCarrito } = useCart();
+  
   const cerrarModal = () => setOpen(false);
   
   const modal = () => {
     return (
       <Modal open={open} className="containerCarrito" onClose={cerrarModal}>
-        <div>
-          <h2 className="carritoTitle">Carrito de compras</h2>
-          <div>
-            <Carrito />
+        <Box>
+          <div style={{backgroundColor: "white", height: "100%"}}>
+            <h2 className="carritoTitle">Carrito de compras</h2>
+            <div>
+              <Carrito />
+            </div>
           </div>
-          <button className="btnVaciarCarrito" onClick={vaciarCarrito}>
-            Vaciar carrito
-          </button>
-        </div>
+        </Box>
+          
       </Modal>
     );
   };
