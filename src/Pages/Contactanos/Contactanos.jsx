@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 import emailjs from '@emailjs/browser'
 import {AiFillInstagram, AiOutlineMail} from "react-icons/ai"
 import {BiSolidMap} from "react-icons/bi"
-import { Modal } from "@mui/material";
 
 
 const Contactanos = () => {
@@ -15,22 +14,6 @@ const Contactanos = () => {
     const handleName = e => setName(e.target.value)
     const handleEmail = e => setEmail(e.target.value)
     const handleMessage = e => setMessage(e.target.value)
-    const [open,setOpen] = useState(false)
-
-    const cerrarModal = () => setOpen(false)
-
-    const modal = () => {
-        return (
-            <Modal
-                open={open}
-                className='containerCarrito'
-                onClose={cerrarModal}
-                >
-                <h1>Carrito de compras:</h1>
-            </Modal>
-        )
-    }
-
 
     const form = useRef()
 
@@ -57,17 +40,10 @@ const Contactanos = () => {
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALxJREFUSEvt0jFqAmEQhuHHQwRMn4hnEMFbCKmFXCdYC97FCLmDjb2QQ4SBLAQLZ343Cxa77b+878w338TA32RgvlGQJvyQEU3xho90fJqPHPBPvOIdu0zSElHAj3jBGQtc/kvwhK9f+AmrCjzklQ0CHrHMEfAlvrPJu/dM0Ate2WBwQQzRS5JF1EV5feTyHaqCEP2tablJLYJOcsAMG+yzNrUKgveMNbYZvNKiCuPmP/ds0CQdBWlcg0f0A4wQHhnVdK5sAAAAAElFTkSuQmCC"/> 
                 <p className='Cinzel' style={{ color: 'black' }}>Aromas PLC</p>
             </Link>
-            <div className={styleContacto.navInfo}>
-                <p className={styleContacto.links}>Productos</p>
-                <button className={styleContacto.btnCarrito} onClick={() => setOpen(true)}>Carrito</button> 
-                {modal()}
-                <p className={styleContacto.links}>Eventos</p>
-                <Link to="/contactanos" className={styleContacto.links}>Contacto</Link>   
-            </div>
         </nav>
         <div className={styleContacto.contactanosContainer}>
             <div className={styleContacto.info}>
-                <div>
+                <div>   
                     <h2>Contacto Aromas PLC</h2>
                     <p>Contactenos ante cualquier consulta y le responderemos a la brevedad.</p>
                 </div>

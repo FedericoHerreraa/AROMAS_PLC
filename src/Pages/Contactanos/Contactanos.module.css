@@ -80,3 +80,38 @@
     text-align: center;
     
 }
+
+.navInfo {
+    display: flex;
+    margin-right: 20px;
+}
+
+.links {
+    margin-right: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-family: Cinzel;
+}
+
+.links:hover {
+    text-decoration: underline;
+}
+
+.btnCarrito {
+    margin-right: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    border: none;
+    background-color: rgb(240, 221, 233);
+    font-family: Cinzel;
+    font-weight: 700;
+}
+
+.btnCarrito:hover {
+    text-decoration: underline;
+}
