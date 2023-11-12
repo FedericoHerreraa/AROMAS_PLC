@@ -18,11 +18,22 @@ const Carrito = () => {
             <div className={stylesCarrito.productInfo}>
               <p>{prod.nombre}</p>
               <p>Precio: ${prod.precio}</p>
+              <p>Cantidad: </p>
             </div>
           </div>
         );
       })}
-      {cart.length != 0? <button onClick={vaciarCarrito}>vaciar Carrito</button>: <p>El carrito esta vacio</p>}
+      <div className={stylesCarrito.vacCarrito}>
+        {cart.length != 0 ? (
+          <div>
+            <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+            <button className={stylesCarrito.btnFinalCompra}>Finalizar compra</button>
+          </div>
+          ) : (
+            <p>El carrito esta vacio!</p>
+          ) 
+        }
+      </div>
     </div>
   );
 };

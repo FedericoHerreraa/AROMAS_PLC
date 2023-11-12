@@ -109,18 +109,22 @@
 }
 
 .containerCarrito {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #678491;
     width: 85%;
     height: 85%;
     border-radius: 10px;
     margin: auto;
+    border: 2px solid #363636;
 }
 
 .carritoTitle {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: 100;
 }
+
 
 .btnVaciarCarrito {
     padding: 5px 10px 5px 10px;

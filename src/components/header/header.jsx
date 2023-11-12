@@ -14,7 +14,11 @@ const Header = () => {
   
   const modal = () => {
     return (
-      <Modal open={open} className={stylesHeader.containerCarrito} onClose={cerrarModal}>
+      <Modal 
+        open={open} 
+        className={stylesHeader.containerCarrito} 
+        onClose={cerrarModal}
+        >
         <Box>
           <div>
             <h2 className={stylesHeader.carritoTitle}>Carrito de compras</h2>
