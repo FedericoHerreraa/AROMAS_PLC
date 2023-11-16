@@ -17,10 +17,10 @@ const Productos = () => {
 
   if (loading) {
     return (
-      <div className="loading">
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
         <div className="spinner">
           <div className="spinner-border" role="status">
-            <span className="visually-hidden" style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px', fontSize: '30px' }}>Cargando...</span>
+            <span className="visually-hidden">Loading...</span>
           </div>
         </div>
       </div>

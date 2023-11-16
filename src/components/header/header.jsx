@@ -49,18 +49,14 @@ const Header = () => {
     <>
       <nav className={stylesHeader.navContainer}>
         <div className={stylesHeader.navTitle}>
-          <p className="Cinzel">Aromas PLC</p>
+          <p className="Cinzel" style={{ marginTop: '15px' }}>Aromas PLC</p>
         </div>
         <div className={stylesHeader.navInfo}>
           <button className={stylesHeader.btnCarrito} onClick={desplazamientoProds}>Productos</button>
-          <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>
-            Carrito
-          </button>
+          <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>Carrito</button>
           {modal()}
-          <p className={stylesHeader.links}>Eventos</p>
-          <Link to="/contactanos" className={stylesHeader.links}>
-            Contacto
-          </Link>
+          <p className={stylesHeader.links} style={{ marginTop: '16px'}}>Eventos</p>
+          <Link to="/contactanos" className={stylesHeader.links}>Contacto</Link>
         </div>
       </nav>
       <div className={stylesHeader.inicio}>
@@ -69,9 +65,9 @@ const Header = () => {
           <h1 className="Cinzel">Aromas PLC</h1>
         </div>
       </div>
-      <div className={stylesHeader.verMas} onClick={desplazamiento}>
-        <p>Ver mas</p>
-      </div>
+      <button className={stylesHeader.verMas} onClick={desplazamiento}>
+        Ver mas
+      </button>
     </>
   );
 };
