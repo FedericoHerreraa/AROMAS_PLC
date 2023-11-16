@@ -8,10 +8,10 @@ export const CartContext = createContext({
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
-    const addProd = (prod) => {
+    const addProd = (prod, cantidad) => {
         !existe(prod.id) ? (
             setCart(prev => {
-                return [...prev, prod]
+                return [...prev, { ...prod, cantidad }]
             })
         ) : (
             console.log('El producto ya esta en el carrito')

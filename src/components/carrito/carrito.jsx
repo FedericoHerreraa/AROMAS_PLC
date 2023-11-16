@@ -12,13 +12,15 @@ const Carrito = () => {
   return (
     <div className={stylesCarrito.contenedorCarrito}>
       {cart.map((prod) => {
+        console.log(prod)
+        let precioNuevo = prod.precio * prod.cantidad
         return (
           <div key={prod.id} className={stylesCarrito.contenedorProduct}>
             <img src={prod.img} alt="" />
             <div className={stylesCarrito.productInfo}>
               <p>{prod.nombre}</p>
-              <p>Precio: ${prod.precio}</p>
-              <p>Cantidad: </p>
+              <p>Precio: {precioNuevo}</p>
+              <p>Cantidad: {prod.cantidad}</p>
             </div>
           </div>
         );

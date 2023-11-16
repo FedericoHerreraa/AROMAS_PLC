@@ -16,6 +16,7 @@ const Detalle = () => {
   const { addProd } = useCart()
 
   const [open,setOpen] = useState(false)
+  const [cantidad,setCantidad] = useState(0)
 
   const cerrarModal = () => setOpen(false)
 
@@ -70,7 +71,26 @@ const Detalle = () => {
           <div className={stylesDetalle.productoInfo}>
             <h2>{products.nombre}</h2>
             <p>Precio: ${products.precio}</p>
-            <button onClick={() => addProd(products)} className={stylesDetalle.botonCarrito}>Agregar al carrito</button>
+            <div className={stylesDetalle.botones}>
+              <button 
+                onClick={() => {
+                  setCantidad(0)
+                  addProd(products, cantidad
+                )}} 
+                className={stylesDetalle.botonCarrito}
+                >
+                  Agregar al carrito: {cantidad}
+              </button>
+              <div className={stylesDetalle.btnMasMenos}>
+                <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>+</button>
+                {cantidad == 0 ? (
+                    <button className={stylesDetalle.btnRestar}>-</button>                
+                  ) : (
+                    <button className={stylesDetalle.btnRestar} onClick={() => setCantidad(cantidad - 1)}>-</button>                
+                  )
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>

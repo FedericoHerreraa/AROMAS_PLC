@@ -86,6 +86,11 @@
     border: 1px solid grey;
     cursor: pointer;
     margin-top: 20px;
+    transition: all 0.2s;
+}
+
+.botonCarrito:hover {
+    background-color: #5c5c5c;
 }
 
 .containerCarrito {
@@ -105,3 +110,47 @@
     font-weight: 100;
 }
 
+.botones {
+    display: flex;
+    align-items: center;
+}
+
+.btnMasMenos {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.btnSumar {
+    margin-bottom: 4px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.btnSumar:hover {
+    background-color: cornflowerblue;
+}
+
+.btnRestar {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border: none;
+    border: 1px solid grey;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.btnRestar:hover {
+    background-color: crimson;
+}
