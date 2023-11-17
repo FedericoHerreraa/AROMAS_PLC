@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import stylesCarrito from "./carrito.module.css";
 
 const Carrito = () => {
   const { cart, vaciarCarrito, eliminarProd } = useCart();
 
+  console.log(cart)
+
   if (cart.length == 0) return <h3>El carrito esta vacio!</h3>
 
   return (
     <div className={stylesCarrito.contenedorCarrito}>
       {cart.map((prod) => {
-        let precioNuevo = prod.precio * prod.cantidad
         const [cantidad,setCantidad] = useState(prod.cantidad)
+        const [precio,setPrecio] = useState(prod.precio * cantidad)
         return (
           <div key={prod.id} className={stylesCarrito.contenedorProduct}>
             <div style={{ display: 'flex' }}>
               <img src={prod.img} alt="" />
               <div className={stylesCarrito.productInfo}>
                 <p>{prod.nombre}</p>
-                <p>Precio: ${precioNuevo}</p>
+                <p>Precio: ${precio}</p>
                 <p>Cantidad: {cantidad}</p>
               </div>
             </div>
@@ -29,6 +31,7 @@ const Carrito = () => {
                   cantidad == 1 ? (
                     eliminarProd(prod.id)
                   ) : (
+                    setPrecio(precio - prod.precio),
                     setCantidad(cantidad - 1)
                   )
                 }}

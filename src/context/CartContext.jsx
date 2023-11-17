@@ -9,13 +9,20 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addProd = (prod, cantidad) => {
-        !existe(prod.id) ? (
+        if (!existe(prod.id)) {
+            setCart(prev => [...prev, { ...prod, cantidad }])
+        } else if (existe(prod.id)){
             setCart(prev => {
-                return [...prev, { ...prod, cantidad }]
+                prev.map(item => {
+                    return (
+                        item.id === prod.id
+                            ? { cantidad: item.cantidad + cantidad }
+                            : item
+                    )
+                })
             })
-        ) : (
-            console.log('El producto ya esta en el carrito')
-        )
+        }
+
     }
 
     const eliminarProd = (id) => {
