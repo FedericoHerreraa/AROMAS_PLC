@@ -11,23 +11,27 @@ export const CartProvider = ({ children }) => {
     const addProd = (prod, cantidad) => {
         if (!existe(prod.id)) {
             setCart(prev => [...prev, { ...prod, cantidad }])
-        } else if (existe(prod.id)){
-            setCart(prev => {
-                prev.map(item => {
-                    return (
-                        item.id === prod.id
-                            ? { cantidad: item.cantidad + cantidad }
-                            : item
-                    )
-                })
-            })
+        } else {
+            setCart(prev => 
+                prev.map(item => 
+                    item.id === prod.id
+                        ? { ...item, cantidad: item.cantidad + cantidad }
+                        : item
+                )
+            )
         }
-
     }
 
-    const eliminarProd = (id) => {
-        const carritoNuevo = cart.filter(prod => prod.id !== id)
-        setCart(carritoNuevo)
+    const eliminarProd = (id, nuevaCantidad) => {
+        if (nuevaCantidad == 1) {
+            const carritoNuevo = cart.filter(prod => prod.id !== id)
+            setCart(carritoNuevo)
+        } else {
+            const carritoActualizado = cart.map(prod =>
+                prod.id === id ? { ...prod, cantidad: nuevaCantidad } : prod
+            )
+            setCart(carritoActualizado);
+        }
     }
 
     const existe = (idProd) => {
@@ -37,6 +41,8 @@ export const CartProvider = ({ children }) => {
     const vaciarCarrito = () => {
         setCart([])
     }
+
+    console.log(cart)
 
     return (
         <CartContext.Provider value={{ addProd, cart, vaciarCarrito, eliminarProd }}>

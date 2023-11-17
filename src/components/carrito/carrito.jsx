@@ -4,16 +4,22 @@ import stylesCarrito from "./carrito.module.css";
 
 const Carrito = () => {
   const { cart, vaciarCarrito, eliminarProd } = useCart();
-
-  console.log(cart)
-
-  if (cart.length == 0) return <h3>El carrito esta vacio!</h3>
+  const [cantidad,setCantidad] = useState(0)
+  const [precio,setPrecio] = useState(0)
 
   return (
     <div className={stylesCarrito.contenedorCarrito}>
       {cart.map((prod) => {
-        const [cantidad,setCantidad] = useState(prod.cantidad)
-        const [precio,setPrecio] = useState(prod.precio * cantidad)
+        useEffect(() => {
+          setCantidad(prod.cantidad)
+          setPrecio(prod.precio * cantidad)
+        }, [])
+
+        const actualizarCantidad = (nuevaCantidad) => {
+          setCantidad(nuevaCantidad);
+          setPrecio(prod.precio * nuevaCantidad);
+        };
+
         return (
           <div key={prod.id} className={stylesCarrito.contenedorProduct}>
             <div style={{ display: 'flex' }}>
@@ -24,16 +30,18 @@ const Carrito = () => {
                 <p>Cantidad: {cantidad}</p>
               </div>
             </div>
-            <div style={{ marginBottom: '30px', marginRight: '20px'}}>
+            <div style={{ marginBottom: '30px', marginRight: '20px' }}>
               <button 
                 className={stylesCarrito.btnEliminar}
                 onClick={() => {
-                  cantidad == 1 ? (
-                    eliminarProd(prod.id)
-                  ) : (
-                    setPrecio(precio - prod.precio),
-                    setCantidad(cantidad - 1)
-                  )
+                  if (cantidad === 1) {
+                    eliminarProd(prod.id, cantidad); // Cambio aquí: nueva cantidad es 0
+                  } else {
+                    actualizarCantidad(cantidad - 1);
+                  }
+                  // setPrecio(precio - prod.precio)
+                  // setCantidad(cantidad - 1)
+                  // eliminarProd(prod.id, cantidad)
                 }}
                 >
                   X
@@ -43,7 +51,7 @@ const Carrito = () => {
         );
       })}
       <div className={stylesCarrito.contenedorBtn}>
-        {cart.length != 0 ? (
+        {cart.length !== 0 ? (
           <div>
             <button className={stylesCarrito.vacCarrito} onClick={vaciarCarrito}>Vaciar Carrito</button>
             <button className={stylesCarrito.btnFinalCompra}>Finalizar compra</button>
