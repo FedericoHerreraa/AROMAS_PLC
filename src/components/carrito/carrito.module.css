@@ -11,6 +11,8 @@
     padding: 18px 10px 0px 10px;
     margin: 10px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contenedorProduct img {
@@ -27,14 +29,14 @@
     color: white;
 }
 
-.vacCarrito {
+.contenedorBtn {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     
 }
 
-.vacCarrito button {
+.vacCarrito {
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
     border: none;
@@ -42,13 +44,33 @@
     transition: all 0.2s;
 }
 
-.vacCarrito button:hover {
+.vacCarrito:hover {
     background-color: #a82d48;
 }
 
 .btnFinalCompra {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
     margin-left: 20px;
     background-color: #2d1f59;
     color: white;
     padding: 5px 10px 5px 10px;
+    transition: all 0.2s;
+}
+
+.btnFinalCompra:hover {
+    background-color: #202f42;
+}
+
+.btnEliminar {
+    padding: 5px;
+    border: none;
+    border-radius: 7px;
+    transition: all 0.2s;
+}
+
+.btnEliminar:hover {
+    background-color: #a82d48;
 }
