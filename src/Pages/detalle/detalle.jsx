@@ -72,15 +72,22 @@ const Detalle = () => {
             <h2>{products.nombre}</h2>
             <p>Precio: ${products.precio}</p>
             <div className={stylesDetalle.botones}>
-              <button 
-                onClick={() => {
-                  setCantidad(0)
-                  addProd(products, cantidad
-                )}} 
-                className={stylesDetalle.botonCarrito}
+              {cantidad == 0 ? (
+                <button className={stylesDetalle.botonCarrito}>
+                  Agregar al carrito: {cantidad}
+                </button>
+              ): (
+                <button 
+                  onClick={() => {
+                    setCantidad(0)
+                    addProd(products, cantidad
+                  )}} 
+                  className={stylesDetalle.botonCarrito}
                 >
                   Agregar al carrito: {cantidad}
-              </button>
+                </button>
+              )  
+              }
               <div className={stylesDetalle.btnMasMenos}>
                 <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>+</button>
                 {cantidad == 0 ? (
