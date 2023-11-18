@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import stylesCarrito from "./carrito.module.css";
+import { Link } from "react-router-dom";
 
 const Carrito = () => {
   const { cart, vaciarCarrito, eliminarProd } = useCart();
@@ -8,19 +8,6 @@ const Carrito = () => {
   return (
     <div className={stylesCarrito.contenedorCarrito}>
       {cart.map((prod) => {
-        // const [cantidad,setCantidad] = useState(prod.cantidad)
-        // const [precio,setPrecio] = useState(prod.precio * prod.cantidad)
-
-        // const handleEliminarProd = () => {
-        //   if (cantidad === 1) {
-        //     eliminarProd(prod.id, cantidad); 
-        //   } else {
-        //     setPrecio(prod.precio * (cantidad - 1));
-        //     setCantidad(cantidad - 1);
-        //     eliminarProd(prod.id, cantidad);
-        //   }
-        // };
-
         let precio = prod.precio * prod.cantidad
         let cantidad = prod.cantidad
 
@@ -41,13 +28,6 @@ const Carrito = () => {
                   cantidad = cantidad - 1
                   precio = prod.precio * cantidad
                   eliminarProd(prod.id, cantidad)
-                  // if (cantidad === 1) {
-                  //   eliminarProd(prod.id, cantidad)
-                  // } else {
-                  //   cantidad = cantidad - 1
-                  //   precio = prod.precio * cantidad
-                  //   eliminarProd(prod.id, cantidad)
-                  // }
                 }}
                 >
                   X
@@ -60,7 +40,7 @@ const Carrito = () => {
         {cart.length !== 0 ? (
           <div>
             <button className={stylesCarrito.vacCarrito} onClick={vaciarCarrito}>Vaciar Carrito</button>
-            <button className={stylesCarrito.btnFinalCompra}>Finalizar compra</button>
+            <Link to='/comprar' className={stylesCarrito.btnFinalCompra}>Finalizar compra</Link>
           </div>
           ) : (
             <p>El carrito esta vacio!</p>
