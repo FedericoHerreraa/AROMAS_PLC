@@ -23,15 +23,15 @@ export const CartProvider = ({ children }) => {
     }
 
     const eliminarProd = (id, nuevaCantidad) => {
-        if (nuevaCantidad == 1) {
-            const carritoNuevo = cart.filter(prod => prod.id !== id)
-            setCart(carritoNuevo)
-        } else {
-            const carritoActualizado = cart.map(prod =>
+        setCart((prevCart) => {
+            if (nuevaCantidad === 0) {
+              return prevCart.filter((prod) => prod.id !== id);
+            } else {
+              return prevCart.map((prod) =>
                 prod.id === id ? { ...prod, cantidad: nuevaCantidad } : prod
-            )
-            setCart(carritoActualizado);
-        }
+              );
+            }
+        });
     }
 
     const existe = (idProd) => {

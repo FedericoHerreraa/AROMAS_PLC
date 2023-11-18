@@ -1,24 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import stylesCarrito from "./carrito.module.css";
 
 const Carrito = () => {
   const { cart, vaciarCarrito, eliminarProd } = useCart();
-  const [cantidad,setCantidad] = useState(0)
-  const [precio,setPrecio] = useState(0)
-
+  
   return (
     <div className={stylesCarrito.contenedorCarrito}>
       {cart.map((prod) => {
-        useEffect(() => {
-          setCantidad(prod.cantidad)
-          setPrecio(prod.precio * cantidad)
-        }, [])
+        // const [cantidad,setCantidad] = useState(prod.cantidad)
+        // const [precio,setPrecio] = useState(prod.precio * prod.cantidad)
 
-        const actualizarCantidad = (nuevaCantidad) => {
-          setCantidad(nuevaCantidad);
-          setPrecio(prod.precio * nuevaCantidad);
-        };
+        // const handleEliminarProd = () => {
+        //   if (cantidad === 1) {
+        //     eliminarProd(prod.id, cantidad); 
+        //   } else {
+        //     setPrecio(prod.precio * (cantidad - 1));
+        //     setCantidad(cantidad - 1);
+        //     eliminarProd(prod.id, cantidad);
+        //   }
+        // };
+
+        let precio = prod.precio * prod.cantidad
+        let cantidad = prod.cantidad
 
         return (
           <div key={prod.id} className={stylesCarrito.contenedorProduct}>
@@ -34,14 +38,16 @@ const Carrito = () => {
               <button 
                 className={stylesCarrito.btnEliminar}
                 onClick={() => {
-                  if (cantidad === 1) {
-                    eliminarProd(prod.id, cantidad); // Cambio aquí: nueva cantidad es 0
-                  } else {
-                    actualizarCantidad(cantidad - 1);
-                  }
-                  // setPrecio(precio - prod.precio)
-                  // setCantidad(cantidad - 1)
-                  // eliminarProd(prod.id, cantidad)
+                  cantidad = cantidad - 1
+                  precio = prod.precio * cantidad
+                  eliminarProd(prod.id, cantidad)
+                  // if (cantidad === 1) {
+                  //   eliminarProd(prod.id, cantidad)
+                  // } else {
+                  //   cantidad = cantidad - 1
+                  //   precio = prod.precio * cantidad
+                  //   eliminarProd(prod.id, cantidad)
+                  // }
                 }}
                 >
                   X
