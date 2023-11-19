@@ -1,4 +1,3 @@
-import stylesCompra from './finalizarCompra.module.css'
 import { useCart } from '../../context/CartContext'
 
 const FinalizarCompra = () => {
@@ -6,7 +5,7 @@ const FinalizarCompra = () => {
 
     return (
         <div>
-            <div style={{ display: 'flex', justifyContent: 'center'}}>Carrito final</div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>Carrito final</div>
             <div>
                 {
                     cart.map(prod => {
