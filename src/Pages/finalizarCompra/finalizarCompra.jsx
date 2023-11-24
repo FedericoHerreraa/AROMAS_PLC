@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import stylesCompra from './finalizarCompra.module.css'
 import { useCart } from '../../context/CartContext'
 import emailjs from '@emailjs/browser'
 
@@ -80,9 +81,9 @@ const FinalizarCompra = () => {
                     </div>
                     {cart.map((prod, index) => (
                         <div key={prod.id}>
-                            <input type="hidden" name={`prod_nombre_${index + 1}`} value={prod.nombre} />
-                            <input type="hidden" name={`prod_precio_${index + 1}`} value={prod.precio * prod.cantidad} />
-                            <input type="hidden" name={`prod_cantidad_${index + 1}`} value={prod.cantidad} />
+                            <input type="hidden" name={`prod_nombre_${index}`} value={prod.nombre} />
+                            <input type="hidden" name={`prod_precio_${index}`} value={prod.precio * prod.cantidad} />
+                            <input type="hidden" name={`prod_cantidad_${index}`} value={prod.cantidad} />
                         </div>
                     ))}
                     <input type="submit" value="Comprar"/>

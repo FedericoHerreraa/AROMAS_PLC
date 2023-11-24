@@ -45,12 +45,19 @@ const Header = () => {
     })
   }
 
+  const desplazamientoTitulo = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <>
       <nav className={stylesHeader.navContainer}>
-        <div className={stylesHeader.navTitle}>
+        <button style={{ background: 'none', border: 'none'}} className={stylesHeader.navTitle} onClick={desplazamientoTitulo}>
           <p className="Cinzel" style={{ marginTop: '15px' }}>Aromas PLC</p>
-        </div>
+        </button>
         <div className={stylesHeader.navInfo}>
           <button className={stylesHeader.btnCarrito} onClick={desplazamientoProds}>Productos</button>
           <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>Carrito</button>
