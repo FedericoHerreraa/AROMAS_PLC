@@ -113,9 +113,6 @@ const Contactanos = () => {
                     className={styleContacto.btnEnviar} 
                     type="submit" 
                     value="Enviar"
-                    onClick={() => {
-                        
-                    }} 
                     />
             </form>
         </div>

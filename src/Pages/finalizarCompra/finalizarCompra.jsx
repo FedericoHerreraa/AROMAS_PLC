@@ -13,13 +13,13 @@ const FinalizarCompra = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_l1bsp9f', 'template_es5doqv', form.current, 'C_Sfb7hmjQpTK2Brz')
+        emailjs.sendForm('service_l1bsp9f', 'template_es5doqv', form.current , 'C_Sfb7hmjQpTK2Brz')
             .then((res) => {
                 console.log(res.text);
-            })    
+            })
             .catch((error) => {
                 console.log(error.text);
-            })
+            });
                 
         // Swal.fire({
         //     title: 'Se ha realizado la compra con exito!',
@@ -78,11 +78,11 @@ const FinalizarCompra = () => {
                             onChange={(e) => setDireccion(e.target.value)} 
                             />
                     </div>
-                    {cart.map(prod => (
+                    {cart.map((prod, index) => (
                         <div key={prod.id}>
-                            <input type="hidden" name='prod_nombre' value={prod.nombre} />
-                            <input type="hidden" name='prod_precio' value={prod.precio * prod.cantidad} />
-                            <input type="hidden" name='prod_cantidad' value={prod.cantidad} />
+                            <input type="hidden" name={`prod_nombre_${index + 1}`} value={prod.nombre} />
+                            <input type="hidden" name={`prod_precio_${index + 1}`} value={prod.precio * prod.cantidad} />
+                            <input type="hidden" name={`prod_cantidad_${index + 1}`} value={prod.cantidad} />
                         </div>
                     ))}
                     <input type="submit" value="Comprar"/>
@@ -90,7 +90,7 @@ const FinalizarCompra = () => {
             </div>
         </div>
 
-    )
+)
 }
 
 export default FinalizarCompra
