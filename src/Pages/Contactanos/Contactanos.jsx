@@ -14,9 +14,7 @@ const Contactanos = () => {
 
     const handleName = e => setName(e.target.value)
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value)
-    }
+    const handleEmail = (e) => setEmail(e.target.value)
 
     const handleMessage = e => setMessage(e.target.value)
 
