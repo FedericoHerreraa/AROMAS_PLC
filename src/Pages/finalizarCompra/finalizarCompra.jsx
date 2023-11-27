@@ -11,6 +11,8 @@ const FinalizarCompra = () => {
     const [nombre,setNombre] = useState('')
     const [email,setEmail] = useState('')
     const [direccion,setDireccion] = useState('')
+    const [decision,setDecision] = useState('')
+    const [telefono,setTelefono] = useState()
     const navigate = useNavigate()
 
     const form = useRef()
@@ -98,6 +100,26 @@ const FinalizarCompra = () => {
                                 onChange={(e) => setDireccion(e.target.value)} 
                                 />
                         </div>
+                        <div className={stylesCompra.campo}>
+                            <label htmlFor="">Numero de telefono:</label>
+                            <input 
+                                type="number"
+                                name='user_telefono'
+                                value={telefono}
+                                onChange={(e) => setTelefono(e.target.value)} 
+                                />
+                        </div>
+                        <div style={{ marginTop: '15px'}} className={stylesCompra.campo}>
+                            <label htmlFor="">Por donde desea continuar la compra?</label>
+                            <select 
+                                style={{ padding: '5px' }}
+                                value={decision}
+                                onChange={(e) => setDecision(e.target.value)}
+                                >
+                                <option value="Whatsapp">Whatsapp</option>
+                                <option value="Email">Email</option>
+                            </select>
+                        </div>
                         {cart.map((prod, index) => (
                             <div key={prod.id}>
                                 <input type="hidden" name={`prod_nombre_${index}`} value={prod.nombre} />
@@ -105,7 +127,9 @@ const FinalizarCompra = () => {
                                 <input type="hidden" name={`prod_cantidad_${index}`} value={prod.cantidad} />
                             </div>
                         ))}
+                        {console.log(decision)}
                         <input type="hidden" name='totalAPagar' value={total()}/>
+                        <input type="hidden" name='decision' value={decision}/>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
                             <input type="submit" value="Comprar" className={stylesCompra.btnCompra}/>
                         </div>

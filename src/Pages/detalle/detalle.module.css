@@ -83,24 +83,23 @@
 .botonCarrito {
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
-    border: 1px solid grey;
+    border: 1px solid rgb(207, 138, 192);
     cursor: pointer;
     margin-top: 20px;
     transition: all 0.2s;
 }
 
 .botonCarrito:hover {
-    background-color: #5c5c5c;
+    background-color: rgb(207, 138, 192);
 }
 
 .containerCarrito {
-    background-color: #678491;
+    background-color: #baabb4;
     width: 85%;
     max-height: 85%;
     overflow-y: auto;
     border-radius: 10px;
     margin: auto;
-    border: 2px solid #363636;
 }
 
 .carritoTitle {

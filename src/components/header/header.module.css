@@ -107,13 +107,12 @@
 }
 
 .containerCarrito {
-    background-color: #678491;
+    background-color: #baabb4;
     width: 85%;
     max-height: 85%;
     overflow-y: auto;
     border-radius: 10px;
     margin: auto;
-    border: 2px solid #363636;
 }
 
 .carritoTitle {

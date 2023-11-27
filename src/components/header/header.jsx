@@ -9,7 +9,6 @@ import Carrito from "../carrito/carrito";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  
   const cerrarModal = () => setOpen(false);
   
   const modal = () => {
