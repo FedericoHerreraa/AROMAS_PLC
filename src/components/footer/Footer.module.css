@@ -1,6 +1,6 @@
 .footercontainer{
     background-color: #ea8aed;
-    height: 150px;
+    min-height: 100%;
     width: 100%;
    
 }
@@ -14,4 +14,10 @@
     justify-content: space-between;
     color: #1a001a;
     margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+    }
 }

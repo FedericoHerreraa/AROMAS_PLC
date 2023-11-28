@@ -151,7 +151,7 @@
     }
 
     .navContainer {
-        height: 120px;
+        height: 110px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -180,6 +180,14 @@
     .verMas {
         top: 90%;
         left: 60%;
+    }
+
+    .btnCarrito {
+        font-size: 12px;
+    }
+
+    .links {
+        font-size: 12px;
     }
 
 }
