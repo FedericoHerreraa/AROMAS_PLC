@@ -136,3 +136,49 @@
 .btnVaciarCarrito:hover {
     background-color: cadetblue;
 }
+
+@media screen and (max-width: 768px) {
+
+    .navTitle {
+        margin-left: 0px;
+    }
+
+    .navInfo {
+        margin-left: 30px;
+        margin-top: 0px;
+        padding-bottom: 10px;
+    }
+
+    .navContainer {
+        height: 120px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inicio {
+        height: 700px;
+        width: 100%;
+        padding-top: 400px;
+    }
+
+    .titleContainer {
+        left: 35%;
+        top: 60%;
+    }
+
+    .titleContainer h1{
+        font-size: 50px;
+        font-weight: 100;
+    }
+    .titleContainer p{
+        font-family: PlayFair;
+        font-weight: 300;
+    }
+
+    .verMas {
+        top: 90%;
+        left: 60%;
+    }
+
+}
