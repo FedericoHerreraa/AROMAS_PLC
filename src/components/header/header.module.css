@@ -3,18 +3,25 @@
     margin: 0;
 }
 
-.header {
-    background-color: rgb(240, 221, 233);
+body {
+    padding-top: env(safe-area-inset-top);
+    margin: 0;
 }
+
+/* .header {
+  
+} */
 
 .navContainer {
     height: 60px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background-color: rgb(240, 221, 233);
+    align-items: center;
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1;
 }
 
