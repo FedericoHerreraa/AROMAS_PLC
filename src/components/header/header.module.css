@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.header {
+    background-color: rgb(240, 221, 233);
+}
+
 .navContainer {
     height: 60px;
     display: flex;
@@ -180,6 +184,7 @@
     .verMas {
         top: 90%;
         left: 60%;
+        color: black;
     }
 
     .btnCarrito {

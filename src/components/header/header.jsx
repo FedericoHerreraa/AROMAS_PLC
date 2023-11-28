@@ -53,18 +53,20 @@ const Header = () => {
 
   return (
     <>
-      <nav className={stylesHeader.navContainer}>
-        <button style={{ background: 'none', border: 'none'}} className={stylesHeader.navTitle} onClick={desplazamientoTitulo}>
-          <p className="Cinzel" style={{ marginTop: '15px' }}>Aromas PLC</p>
-        </button>
-        <div className={stylesHeader.navInfo}>
-          <button className={stylesHeader.btnCarrito} onClick={desplazamientoProds}>Productos</button>
-          <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>Carrito</button>
-          {modal()}
-          <p className={stylesHeader.links} style={{ marginTop: '16px'}}>Eventos</p>
-          <Link to="/contactanos" className={stylesHeader.links}>Contacto</Link>
-        </div>
-      </nav>
+      <header className={stylesHeader.header}>
+        <nav className={stylesHeader.navContainer}>
+          <button style={{ background: 'none', border: 'none'}} className={stylesHeader.navTitle} onClick={desplazamientoTitulo}>
+            <p className="Cinzel" style={{ marginTop: '15px' }}>Aromas PLC</p>
+          </button>
+          <div className={stylesHeader.navInfo}>
+            <button className={stylesHeader.btnCarrito} onClick={desplazamientoProds}>Productos</button>
+            <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>Carrito</button>
+            {modal()}
+            <p className={stylesHeader.links} style={{ marginTop: '16px'}}>Eventos</p>
+            <Link to="/contactanos" className={stylesHeader.links}>Contacto</Link>
+          </div>
+        </nav>
+      </header>
       <div className={stylesHeader.inicio}>
         <div className={stylesHeader.titleContainer}>
           <p>Bienvenidos</p>
