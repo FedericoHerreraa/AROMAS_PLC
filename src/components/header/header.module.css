@@ -3,10 +3,7 @@
     margin: 0;
 }
 
-body {
-    padding-top: env(safe-area-inset-top);
-    margin: 0;
-}
+
 
 /* .header {
   
@@ -17,6 +14,7 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: rgb(240, 221, 233);
+    padding-top: env(safe-area-inset-top);
     align-items: center;
     width: 100%;
     position: fixed;
