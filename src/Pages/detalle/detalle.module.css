@@ -28,7 +28,6 @@
 
 .navInfo {
     display: flex;
-    margin-right: 20px;
 }
 
 .links {
@@ -55,6 +54,7 @@
     background-color: rgb(240, 221, 233);
     font-family: Cinzel;
     font-weight: 700;
+    background: none;
 }
 
 .btnCarrito:hover {
@@ -153,4 +153,42 @@
 
 .btnRestar:hover {
     background-color: crimson;
+}
+
+
+@media screen and (max-width: 768px) {  
+    .navTitle {
+        margin-left: 0px;
+    }
+
+    .navInfo {
+        margin-left: 30px;
+        margin-top: 0px;
+        padding-bottom: 10px;
+    }
+
+    .navContainer {
+        height: 110px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .producto {
+        flex-direction: column;
+    } 
+
+    .producto img {
+        height: 400px;
+        width: 300px;
+    }
+
+    .contenedorProducto {
+        margin-left: 0;
+        padding-top: 130px;
+    }
+
+    .botones {
+        margin-bottom: 20px;
+    }
 }

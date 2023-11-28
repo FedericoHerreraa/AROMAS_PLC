@@ -67,7 +67,9 @@ const Detalle = () => {
       </nav>
       <div className={stylesDetalle.contenedorProducto}>
         <div key={products.id} className={stylesDetalle.producto}>
-          <img src={products.img} alt="No se pudo cargar la imagen"/>
+          <div style={{ display: 'flex', justifyContent: 'center'}}>
+            <img src={products.img} alt="No se pudo cargar la imagen"/>
+          </div>
           <div className={stylesDetalle.productoInfo}>
             <h2>{products.nombre}</h2>
             <p>Precio: ${products.precio}</p>
