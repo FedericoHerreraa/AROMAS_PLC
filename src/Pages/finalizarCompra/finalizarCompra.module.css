@@ -1,7 +1,7 @@
 
 
 .navContainer{
-    height: 60px;
+    min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,4 +49,27 @@
 
 .contenedorCarrito {
     margin-top: 10px;
+}
+
+.title {
+    margin-right: 500px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .navContainer {
+        flex-direction: column;
+    }
+
+    .contenedorCompra {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .title {
+        margin-right: 0px;
+    }
 }

@@ -52,7 +52,7 @@ const FinalizarCompra = () => {
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALxJREFUSEvt0jFqAmEQhuHHQwRMn4hnEMFbCKmFXCdYC97FCLmDjb2QQ4SBLAQLZ343Cxa77b+878w338TA32RgvlGQJvyQEU3xho90fJqPHPBPvOIdu0zSElHAj3jBGQtc/kvwhK9f+AmrCjzklQ0CHrHMEfAlvrPJu/dM0Ate2WBwQQzRS5JF1EV5feTyHaqCEP2tablJLYJOcsAMG+yzNrUKgveMNbYZvNKiCuPmP/ds0CQdBWlcg0f0A4wQHhnVdK5sAAAAAElFTkSuQmCC"/> 
                     <p className='Cinzel' style={{ color: 'black', marginTop: '15px' }}>Aromas PLC</p>
                 </Link>
-                <div style={{ marginRight: '500px', marginTop: '5px'}}>
+                <div className={stylesCompra.title}>
                     <h2>Resumen de compra</h2>
                 </div>
             </nav>
