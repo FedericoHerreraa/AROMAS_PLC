@@ -78,6 +78,7 @@ const Detalle = () => {
           <div className={stylesDetalle.productoInfo}>
             <h2>{products.nombre}</h2>
             <p>Precio: ${products.precio}</p>
+            <p>Descripcion del producto</p>
             <div className={stylesDetalle.botones}>
               {cantidad == 0 ? (
                 <button className={stylesDetalle.botonCarrito}>
