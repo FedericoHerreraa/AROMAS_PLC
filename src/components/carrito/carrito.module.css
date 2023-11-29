@@ -75,3 +75,33 @@
 .btnEliminar:hover {
     background-color: #a82d48;
 }
+
+.total {
+    font-size: 18px; 
+    font-weight: 700; 
+    display: flex; 
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .contenedorProduct {
+        padding: 40px 0px 10px 10px;
+        height: 150px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .productInfo {
+        padding: 5px 5px 25px 10px;
+    }
+
+    .productInfo p {
+        font-size: 13px;
+    }
+
+    .total {
+        display: block; 
+    }
+    
+}

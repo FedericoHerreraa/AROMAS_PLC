@@ -3,7 +3,7 @@ import stylesCarrito from "./carrito.module.css";
 import { Link } from "react-router-dom";
 
 const Carrito = () => {
-  const { cart, vaciarCarrito, eliminarProd } = useCart();
+  const { cart, vaciarCarrito, eliminarProd, total } = useCart();
   
   return (
     <div className={stylesCarrito.contenedorCarrito}>
@@ -39,6 +39,7 @@ const Carrito = () => {
       <div className={stylesCarrito.contenedorBtn}>
         {cart.length !== 0 ? (
           <div>
+            <p className={stylesCarrito.total}>Total: ${total()}</p>
             <button className={stylesCarrito.vacCarrito} onClick={vaciarCarrito}>Vaciar Carrito</button>
             <Link to='/comprar' className={stylesCarrito.btnFinalCompra}>Finalizar compra</Link>
           </div>

@@ -7,13 +7,14 @@ import { Modal } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import Carrito from "../../components/carrito/carrito";
+import Badge from '@mui/material/Badge';
 
 const Detalle = () => {
   const { id } = useParams();
   const product = () => getProductById(id);
   const [products, error, loading] = useAsync(product, id);
 
-  const { addProd } = useCart()
+  const { addProd, cart } = useCart()
 
   const [open,setOpen] = useState(false)
   const [cantidad,setCantidad] = useState(0)
@@ -59,7 +60,11 @@ const Detalle = () => {
           <p className='Cinzel' style={{ color: 'black', marginTop: '15px' }}>Aromas PLC</p>
         </Link>
         <div className={stylesDetalle.navInfo}>
-          <button className={stylesDetalle.btnCarrito} onClick={() => setOpen(true)}>Carrito</button> 
+          <div style={{ marginTop: '7px'}}>
+            <Badge style={{ marginRight: '30px', marginTop: '8px' }} color="secondary" badgeContent={cart.length}>
+              <button className={stylesDetalle.btnCarrito} onClick={() => setOpen(true)}>Carrito</button>
+            </Badge>
+          </div>
           {modal()}
           <p className={stylesDetalle.links} style={{ marginTop: '16px'}}>Eventos</p>
           <Link to="/contactanos" className={stylesDetalle.links} style={{ marginTop: '15px' }}>Contacto</Link>   
