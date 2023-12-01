@@ -1,7 +1,7 @@
 
 
 .navContainer{
-    min-height: 60px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,15 +52,20 @@
 }
 
 .title {
-    margin-right: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.title h2 {
+    font-family: PlayFair;
+    font-weight: 100;
+    margin-left: 7px;
     margin-top: 5px;
 }
 
 @media screen and (max-width: 768px) {
-    .navContainer {
-        flex-direction: column;
-    }
-
     .contenedorCompra {
         flex-direction: column;
         justify-content: center;
@@ -70,6 +75,6 @@
     }
     
     .title {
-        margin-right: 0px;
+        margin-left: 30px;
     }
 }
