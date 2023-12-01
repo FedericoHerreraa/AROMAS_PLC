@@ -148,5 +148,28 @@
     .navTitle {
         margin-left: 5px;
     }
+
+    .info div h2 {
+        font-size: 33px;
+        margin-bottom: 20px;
+    }
+
+    .red {
+        margin-top: 0px;
+        align-items: center;
+    }
+
+    .red div {
+        margin-bottom: 12px;
+    }
+
+    .red p {
+        margin-top: 5px;
+    }
+
+    .botonVolver {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
     
 }

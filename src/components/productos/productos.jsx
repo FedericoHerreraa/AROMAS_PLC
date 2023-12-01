@@ -36,7 +36,7 @@ const Productos = () => {
             <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
               <div className={stylesProducts.prod}>
                   <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
-                  <p>{prod.nombre}</p>
+                  <p className={stylesProducts.nombre}>{prod.nombre}</p>
                   <p>Precio: ${prod.precio}</p>
               </div>
             </Link>

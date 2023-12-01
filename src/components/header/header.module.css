@@ -173,12 +173,13 @@
     }
 
     .titleContainer {
-        left: 35%;
-        top: 60%;
+        left: 0%;
+        top: 40%;
+        right: 40%;
     }
 
     .titleContainer h1{
-        font-size: 50px;
+        font-size: 25px;
         font-weight: 100;
     }
     .titleContainer p{
@@ -187,8 +188,9 @@
     }
 
     .verMas {
-        top: 90%;
-        left: 60%;
+        top: 68%;
+        left: 10%;
+        bottom: 27%;
         color: black;
     }
 

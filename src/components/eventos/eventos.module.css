@@ -78,7 +78,7 @@
     }
 
     .info h2{
-        font-size: 20px;
+        font-size: 28px;
     }
 
     .info p{
@@ -88,6 +88,7 @@
     .info a {
         margin-bottom: 10px;
         width: 35%;
+        font-size: 15px;
     }
 
 

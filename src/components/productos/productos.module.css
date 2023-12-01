@@ -67,4 +67,8 @@ img {
     .prod {
         width: 250px;
     }
+
+    .nombre {
+        font-size: 18px;
+    }
 }

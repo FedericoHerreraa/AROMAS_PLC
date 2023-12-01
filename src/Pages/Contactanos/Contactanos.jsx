@@ -59,20 +59,26 @@ const Contactanos = () => {
                 <div>
                     <h3>Seguinos en nuestra red social y contactanos</h3>
                     <div className={styleContacto.red}>
-                        <AiFillInstagram/>
+                        <div>
+                            <AiFillInstagram/>
+                        </div>
                         <p>aromas.plc</p>
                     </div>
                     <div className={styleContacto.red}>
-                        <AiOutlineMail/>
+                        <div>
+                            <AiOutlineMail/>
+                        </div>
                         <p>aromass.plc@gmail.com</p>
                     </div>
                     <div className={styleContacto.red}>
-                        <BiSolidMap/>
+                        <div>
+                            <BiSolidMap/>
+                        </div>
                         <p>Monte Castro, CABA. Buenos Aires</p>
                     </div>
                 </div>
                 <Link className={styleContacto.botonVolver} to="/">Volver al menu inicial</Link>
-                <p>&copy; 2023 Aromas PLC. Todos los derechos reservados.</p>
+                <p style={{ borderBottom: '1px solid black', paddingBottom: '30px'}}>&copy; 2023 Aromas PLC. Todos los derechos reservados.</p>
             </div>
             <form className={styleContacto.form} onSubmit={sendEmail} ref={form}>
                 <h1>Formulario de Contacto</h1>
