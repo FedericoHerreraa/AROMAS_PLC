@@ -133,6 +133,7 @@
     width: 25px;
 }
 
+
 @media screen and (max-width: 768px) {
     .contactanosContainer {
         flex-direction: column;
@@ -170,6 +171,11 @@
     .botonVolver {
         margin-top: 20px;
         margin-bottom: 10px;
+    }
+
+    .derechos {
+        border-bottom: 1px solid black;
+        padding-bottom: 30px;
     }
     
 }

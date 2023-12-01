@@ -78,7 +78,7 @@ const Contactanos = () => {
                     </div>
                 </div>
                 <Link className={styleContacto.botonVolver} to="/">Volver al menu inicial</Link>
-                <p style={{ borderBottom: '1px solid black', paddingBottom: '30px'}}>&copy; 2023 Aromas PLC. Todos los derechos reservados.</p>
+                <p className={styleContacto.derechos}>&copy; 2023 Aromas PLC. Todos los derechos reservados.</p>
             </div>
             <form className={styleContacto.form} onSubmit={sendEmail} ref={form}>
                 <h1>Formulario de Contacto</h1>
