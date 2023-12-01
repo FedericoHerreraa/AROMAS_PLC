@@ -12,7 +12,7 @@ const FinalizarCompra = () => {
     const [nombre,setNombre] = useState('')
     const [email,setEmail] = useState('')
     const [direccion,setDireccion] = useState('')
-    const [decision,setDecision] = useState('')
+    const [decision,setDecision] = useState('Whatsapp')
     const [telefono,setTelefono] = useState()
     const navigate = useNavigate()
 
@@ -20,6 +20,10 @@ const FinalizarCompra = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
+
+        // if (decision == undefined || decision == null) {
+        //     setDecision('Whatsapp')
+        // }
 
         emailjs.sendForm('service_l1bsp9f', 'template_es5doqv', form.current , 'C_Sfb7hmjQpTK2Brz')
             .then((res) => {
