@@ -148,7 +148,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
     .navTitle {
         margin-left: 0px;
     }
@@ -188,9 +187,9 @@
     }
 
     .verMas {
-        top: 60%;
+        top: 63%;
         left: 20%;
-        bottom: 35%;
+        bottom: 32%;
         color: black;
     }
 
