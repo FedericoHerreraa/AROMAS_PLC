@@ -31,7 +31,7 @@ const Carrito = () => {
                   addProd(prod, 1)
                 }}
                 >
-                <AddIcon fontSize="10px"/>
+                <AddIcon fontSize="10px" style={{ textDecoration: "none", color: 'black' }}/>
               </button>
               <button 
                 className={stylesCarrito.btnRestar}
@@ -41,7 +41,7 @@ const Carrito = () => {
                   eliminarProd(prod.id, cantidad)
                 }}
                 >
-                <RemoveIcon fontSize="10px"/>
+                <RemoveIcon fontSize="10px" style={{ textDecoration: "none", color: 'black' }}/>
               </button>
             </div>
           </div>
