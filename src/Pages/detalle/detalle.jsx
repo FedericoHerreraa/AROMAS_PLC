@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import Carrito from "../../components/carrito/carrito";
 import Badge from '@mui/material/Badge';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const Detalle = () => {
   const { id } = useParams();
@@ -97,11 +99,17 @@ const Detalle = () => {
               )  
               }
               <div className={stylesDetalle.btnMasMenos}>
-                <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>+</button>
+                <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>
+                  <AddIcon fontSize="5px"/>
+                </button>
                 {cantidad == 0 ? (
-                    <button className={stylesDetalle.btnRestar}>-</button>                
+                    <button className={stylesDetalle.btnRestar}>
+                      <RemoveIcon fontSize="5px"/>
+                    </button>                
                   ) : (
-                    <button className={stylesDetalle.btnRestar} onClick={() => setCantidad(cantidad - 1)}>-</button>                
+                    <button className={stylesDetalle.btnRestar} onClick={() => setCantidad(cantidad - 1)}>
+                      <RemoveIcon fontSize="5px"/>
+                    </button>                
                   )
                 }
               </div>

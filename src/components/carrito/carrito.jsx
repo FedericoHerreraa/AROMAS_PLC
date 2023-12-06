@@ -1,9 +1,11 @@
 import { useCart } from "../../context/CartContext";
 import stylesCarrito from "./carrito.module.css";
 import { Link } from "react-router-dom";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const Carrito = () => {
-  const { cart, vaciarCarrito, eliminarProd, total } = useCart();
+  const { cart, vaciarCarrito, eliminarProd, total, addProd } = useCart();
   
   return (
     <div className={stylesCarrito.contenedorCarrito}>
@@ -21,16 +23,25 @@ const Carrito = () => {
                 <p>Cantidad: {cantidad}</p>
               </div>
             </div>
-            <div style={{ marginBottom: '30px', marginRight: '20px' }}>
+            <div className={stylesCarrito.btnMasMenos}>
               <button 
-                className={stylesCarrito.btnEliminar}
+                className={stylesCarrito.btnSumar}
+                onClick={() => {
+                  precio = prod.precio * cantidad
+                  addProd(prod, 1)
+                }}
+                >
+                <AddIcon fontSize="10px"/>
+              </button>
+              <button 
+                className={stylesCarrito.btnRestar}
                 onClick={() => {
                   cantidad = cantidad - 1
                   precio = prod.precio * cantidad
                   eliminarProd(prod.id, cantidad)
                 }}
                 >
-                  X
+                <RemoveIcon fontSize="10px"/>
               </button>
             </div>
           </div>
