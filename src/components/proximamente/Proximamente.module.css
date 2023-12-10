@@ -1,5 +1,5 @@
 .proximo{
-    background-color: #ea8aed;
+    background-color: #e3b8d3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +9,13 @@
     margin-bottom: 20px;
 }
 .proximo h3{
-    font-size: x-large;
+    font-size: 30px;
     font-weight: 100;
+    font-family: PlayFair;
+}
+
+@media screen and (max-width: 768px) {
+    .proximo h3 {
+        font-size: 25px;
+    }
 }
