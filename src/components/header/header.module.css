@@ -196,4 +196,8 @@
         font-size: 12px;
     }
 
+    .inicio {
+        background-image: url('../../img/bamboo.jpg');
+    }
+
 }
