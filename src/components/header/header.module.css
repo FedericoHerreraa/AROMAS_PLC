@@ -198,7 +198,7 @@
 
     .inicio {
         background-image: url('../../img/bamboo.jpg');
-        background-size: none;
+        background-size: auto;
     }
 
 }
