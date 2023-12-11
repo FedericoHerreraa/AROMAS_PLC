@@ -2,15 +2,9 @@ import stylesFooter from "./Footer.module.css"
 import { BiLogoGmail } from "react-icons/bi"
 import { PiMapPinFill } from "react-icons/pi"
 import { AiOutlineInstagram } from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
-  const desplazamiento = () => {
-    window.scrollTo({
-      top: window.innerHeight + 620,
-      behavior: 'smooth'
-    })
-  }
-
   return (
     <div className={stylesFooter.footercontainer}>
       <footer>
@@ -31,7 +25,7 @@ const Footer = () => {
             <h4>Enlaces del Sitio</h4>
             <ul>
               <li><a style={{ color: 'black' }} href="#">Inicio</a></li>
-              <li><a style={{ color: 'black', textDecoration: 'underline', cursor: 'pointer' }} onClick={desplazamiento}>Productos</a></li>
+              <li><Link to="/contactanos" style={{ color: 'black', textDecoration: 'underline', cursor: 'pointer' }}>Preguntá!</Link></li>
             </ul>
           </div>
         </div>

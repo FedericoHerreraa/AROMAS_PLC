@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import stylesCompra from './finalizarCompra.module.css'
 import { useCart } from '../../context/CartContext'
 import emailjs from '@emailjs/browser'
@@ -12,18 +12,20 @@ const FinalizarCompra = () => {
     const [nombre,setNombre] = useState('')
     const [email,setEmail] = useState('')
     const [direccion,setDireccion] = useState('')
-    const [decision,setDecision] = useState('')
+    const [decision,setDecision] = useState('whatsapp')
     const [telefono,setTelefono] = useState()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (decision === '') {
+            setDecision('whatsapp')
+        }
+    }, [])
 
     const form = useRef()
 
     const sendEmail = (e) => {
         e.preventDefault();
-
-        if (decision == undefined || decision == null) {
-            setDecision('Whatsapp')
-        }
 
         emailjs.sendForm('service_l1bsp9f', 'template_es5doqv', form.current , 'C_Sfb7hmjQpTK2Brz')
             .then((res) => {
@@ -48,6 +50,7 @@ const FinalizarCompra = () => {
         setEmail('')
         setNombre('')
         setDireccion('')
+        setTelefono('')
     }
 
     return (
@@ -86,6 +89,7 @@ const FinalizarCompra = () => {
                         <div className={stylesCompra.campo}>
                             <label htmlFor="">Nombre y apellido:</label>
                             <input 
+                                required
                                 type="text"
                                 name='user_name'
                                 onChange={(e) => setNombre(e.target.value)}
@@ -96,6 +100,7 @@ const FinalizarCompra = () => {
                             <label htmlFor="">Email:</label>
                             <input 
                                 type="email"
+                                required
                                 name='user_email'
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)} 
@@ -105,6 +110,7 @@ const FinalizarCompra = () => {
                             <label htmlFor="">Direccion:</label>
                             <input 
                                 type="text"
+                                required
                                 name='user_direccion'
                                 value={direccion}
                                 onChange={(e) => setDireccion(e.target.value)} 
@@ -114,6 +120,7 @@ const FinalizarCompra = () => {
                             <label htmlFor="">Numero de telefono:</label>
                             <input 
                                 type="number"
+                                required
                                 name='user_telefono'
                                 value={telefono}
                                 onChange={(e) => setTelefono(e.target.value)} 
@@ -124,10 +131,17 @@ const FinalizarCompra = () => {
                             <select 
                                 style={{ padding: '5px' }}
                                 value={decision}
-                                onChange={(e) => setDecision(e.target.value)}
+                                onChange={(e) => {
+                                    setDecision(e.target.value)
+                                }}
+                                onBlur={() => {
+                                    if (decision === '') {
+                                        setDecision('whatsapp')
+                                    }
+                                }}
                                 >
-                                <option value="Whatsapp">Whatsapp</option>
-                                <option value="Email">Email</option>
+                                <option required value="whatsapp">Whatsapp</option>
+                                <option required value="email">Email</option>
                             </select>
                         </div>
                         {cart.map((prod, index) => (
@@ -137,7 +151,6 @@ const FinalizarCompra = () => {
                                 <input type="hidden" name={`prod_cantidad_${index}`} value={prod.cantidad} />
                             </div>
                         ))}
-                        {console.log(decision)}
                         <input type="hidden" name='totalAPagar' value={total()}/>
                         <input type="hidden" name='decision' value={decision}/>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>

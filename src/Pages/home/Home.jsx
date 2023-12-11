@@ -2,7 +2,7 @@ import Header from '../../components/header/header'
 import Eventos from '../../components/eventos/eventos'
 import Footer from '../../components/footer/Footer'
 import Productos from '../../components/productos/productos'
-import Proximamente from '../../components/proximamente/Proximamente'
+import HomeSpray from '../../components/homeSpray/HomeSpray'
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         <Header/>
         <Eventos/>
         <Productos/>
-        <Proximamente/>
+        <HomeSpray/>
         <Footer/>
     </div>
   )
