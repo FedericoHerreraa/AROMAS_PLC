@@ -1,5 +1,5 @@
 .proximo{
-    background-color: #e3b8d3;
+    background: linear-gradient(#e3b8d3,#ccc0c7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: white;
-    opacity: 0.93;
 }
 
 .card p {
@@ -43,5 +42,18 @@
 @media screen and (max-width: 768px) {
     .proximo h3 {
         font-size: 25px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .img {
+        height: 390px;
+        width: 100%;
     }
 }
