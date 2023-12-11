@@ -6,12 +6,38 @@
     flex-direction: column;
     height: 50px;
     width: 100%;
-    margin-bottom: 20px;
 }
 .proximo h3{
     font-size: 30px;
     font-weight: 100;
     font-family: PlayFair;
+}
+
+.container {
+    padding: 20px 100px 20px 100px;
+    background-image: url('../../img/img_fondo.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card {
+    display: flex;
+    border: 1px solid #dbdbdb;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    opacity: 0.93;
+}
+
+.card p {
+    padding: 50px;
+}
+
+.img {
+    height: 500px;
+    width: 500px;
+    margin-bottom: 0px;
 }
 
 @media screen and (max-width: 768px) {

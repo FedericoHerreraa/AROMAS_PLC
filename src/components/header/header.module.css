@@ -3,12 +3,6 @@
     margin: 0;
 }
 
-
-
-/* .header {
-  
-} */
-
 .navContainer {
     height: 60px;
     display: flex;
@@ -69,6 +63,7 @@
 
 .inicio {
     background-image: url("/src/img/img_fondo.jpg");
+    background-attachment: fixed;
     height: 650px;
     width: 100%;
     background-size: cover;

@@ -1,5 +1,5 @@
 .footercontainer{
-    background-color: #e3b8d3;
+    background-color: #333333;
     min-height: 215px;
     width: 100%;
    
@@ -17,7 +17,7 @@
 }
 
 .footerContent div {
-    background-color: #edc7de;
+    background-color: #ccae8f;
     padding: 20px 60px 40px 60px;
     border-radius: 10px;
     box-shadow: 0px 5px 20px 5px;
@@ -26,6 +26,7 @@
 .copyright {
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
