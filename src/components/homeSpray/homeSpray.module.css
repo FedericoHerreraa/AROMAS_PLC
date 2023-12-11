@@ -46,6 +46,8 @@
 
     .container {
         padding: 10px;
+        background-color: grey;
+        background-image: none;
     }
 
     .card {
