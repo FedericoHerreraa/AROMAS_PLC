@@ -197,7 +197,7 @@
     }
 
     .inicio {
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
     }
 
