@@ -37,6 +37,24 @@
     text-decoration: underline;
 }
 
+.contacto {
+    margin-right: 18px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-family: Cinzel;
+    background-color: #a87339;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    transition: all 0.2s;
+}
+
+.contacto:hover {
+    background-color: #c78844;
+}
+
 .btnCarrito {
     font-size: 15px;
     padding: 2px;
@@ -193,6 +211,10 @@
     }
 
     .links {
+        font-size: 12px;
+    }
+
+    .contacto {
         font-size: 12px;
     }
 

@@ -2,10 +2,57 @@ import { useAsync } from "../../hooks/useAsync";
 import { getProducts } from "../../products/products";
 import stylesProducts from "./productos.module.css";
 import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Productos = () => {
   const products = () => getProducts();
   const [productos, error, loading] = useAsync(products);
+
+  function Arrow(props) {
+    const { className, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ 
+          display: "block", 
+          fontSize: '40px', 
+          background: 'none',
+          backgroundColor: 'black', 
+          color: 'black',
+          borderRadius: '12px',
+          border: '1px solid grey'
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+  
+
+  const [sliderSettings] = useState({
+    infinite: true,
+    className: stylesProducts.slider,
+    dots: true,
+    centerMode: true,
+    speed: 600,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    arrows: true,
+    nextArrow: <Arrow/>,
+    prevArrow: <Arrow/>,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        },
+      },
+    ],
+
+  });
 
   if (error) {
     return (
@@ -30,19 +77,21 @@ const Productos = () => {
   return (
     <div className={stylesProducts.container}>
       <h1 className={stylesProducts.tituloProds}>Nuestros Productos</h1>
-      <div className={stylesProducts.containerProd}>
+      <Slider {...sliderSettings}>
         {productos.map((prod) => {
           return (
             <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
               <div className={stylesProducts.prod}>
                   <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
-                  <p className={stylesProducts.nombre}>{prod.nombre}</p>
-                  <p>Precio: ${prod.precio}</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                    <p className={stylesProducts.nombre}>{prod.nombre}</p>
+                    <p>Precio: ${prod.precio}</p>
+                  </div>
               </div>
             </Link>
           );
         })}
-      </div>
+      </Slider>
     </div>
   );
 };

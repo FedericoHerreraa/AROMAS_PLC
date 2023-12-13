@@ -69,7 +69,7 @@ const Header = () => {
             </Badge>
             {modal()}
             <p className={stylesHeader.links} style={{ marginTop: '16px'}}>Eventos</p>
-            <Link to="/contactanos" className={stylesHeader.links}>Contacto</Link>
+            <Link to="/contactanos" className={stylesHeader.contacto}>Contacto</Link>
           </div>
         </nav>
       </header>
