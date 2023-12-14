@@ -2,7 +2,7 @@ import { useAsync } from "../../hooks/useAsync";
 import { getProducts } from "../../products/products";
 import stylesProducts from "./productos.module.css";
 import { Link } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -78,22 +78,20 @@ const Productos = () => {
     <div className={stylesProducts.container}>
       <h1 className={stylesProducts.tituloProds}>Nuestros Productos</h1>
       <Slider {...sliderSettings}>
-        {productos.map((prod) => {
-          return (
-            <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
-              <div className={stylesProducts.prod}>
-                  <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <p className={stylesProducts.nombre}>{prod.nombre}</p>
-                    <p>Precio: ${prod.precio}</p>
-                  </div>
-              </div>
-            </Link>
-          );
-        })}
+        {productos.map((prod) => (
+          <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
+            <div className={stylesProducts.prod}>
+                <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                  <p className={stylesProducts.nombre}>{prod.nombre}</p>
+                  <p>Precio: ${prod.precio}</p>
+                </div>
+            </div>
+          </Link>
+        ))}
       </Slider>
     </div>
   );
-};
+}
 
 export default Productos;
