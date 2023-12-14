@@ -1,5 +1,6 @@
 import stylesFooter from "./Footer.module.css"
 import { AiOutlineInstagram } from "react-icons/ai"
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Link } from "react-router-dom"
 
 const Footer = () => {
@@ -20,10 +21,14 @@ const Footer = () => {
           </div>
           <div className={stylesFooter.socialLinks}>
             <h4>Redes Sociales</h4>
-            <ul style={{ display: 'flex', alignItems: 'center'}}>
-              <AiOutlineInstagram size={'20px'}/>
-              <a style={{ }} target="blank" className={stylesFooter.ig} href="https://www.instagram.com/aromas.plc/">Instagram</a>
-            </ul>
+            <div style={{ display: 'flex', alignItems: 'center'}}>
+              <AiOutlineInstagram size={'20px'} color="#8d48a8"/>
+              <a target="blank" className={stylesFooter.ig} href="https://www.instagram.com/aromas.plc/">Instagram</a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px'}}>
+              <WhatsAppIcon fontSize="small" style={{ color: 'green' }} size={'10px'} color="green"/>
+              <a target="blank" className={stylesFooter.num} href="https://www.instagram.com/aromas.plc/">+54 9 11 44559933</a>
+            </div>
           </div>
           <div className={stylesFooter.siteLinks}>
             <h4>Enlaces del Sitio</h4>

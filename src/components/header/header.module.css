@@ -45,14 +45,14 @@
     text-decoration: none;
     color: black;
     font-family: Cinzel;
-    background-color: #a87339;
+    background-color: #b38471;
     padding: 5px 10px 5px 10px;
     border-radius: 15px;
     transition: all 0.2s;
 }
 
 .contacto:hover {
-    background-color: #c78844;
+    background-color: #b88f7f;
 }
 
 .btnCarrito {

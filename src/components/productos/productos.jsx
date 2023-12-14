@@ -81,11 +81,11 @@ const Productos = () => {
         {productos.map((prod) => (
           <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
             <div className={stylesProducts.prod}>
-                <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                  <p className={stylesProducts.nombre}>{prod.nombre}</p>
-                  <p>Precio: ${prod.precio}</p>
-                </div>
+              <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <p className={stylesProducts.nombre}>{prod.nombre}</p>
+                <p>Precio: ${prod.precio}</p>
+              </div>
             </div>
           </Link>
         ))}

@@ -11,13 +11,13 @@
     padding-right: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     color: #1a001a;
     margin-bottom: 40px;
 }
 
 .contactInfo {
-    width: 17%;
+    width: 20%;
 }
 
 .contactInfo h4 {
@@ -69,7 +69,14 @@
     text-decoration: none;
     color: black; 
     margin-left: 5px; 
-    font-size: 20px;
+    font-size: 18px;
+}
+
+.num {
+    text-decoration: none;
+    color: black; 
+    margin-left: 5px; 
+    font-size: 17px;
 }
 
 .copyright {
