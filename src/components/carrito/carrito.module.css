@@ -42,17 +42,20 @@
 }
 
 .vacCarrito {
-    padding: 5px 10px 5px 10px;
+    padding: 2px 7px 2px 7px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid grey;
     cursor: pointer;
     transition: all 0.2s;
+    background: none;
     text-decoration: none;
     color: black;
+    font-weight: 600;
 }
 
 .vacCarrito:hover {
-    background-color: #a82d48;
+    text-decoration: underline;
+    /* background-color: #a82d48; */
 }
 
 .btnFinalCompra {

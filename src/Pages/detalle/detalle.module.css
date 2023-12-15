@@ -84,6 +84,7 @@
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     border: 1px solid rgb(207, 138, 192);
+    background-color: #cfb2c8;
     cursor: pointer;
     margin-top: 20px;
     transition: all 0.2s;
@@ -129,7 +130,7 @@
     width: 20px;
     height: 20px;
     border: none;
-    border: 1px solid grey;
+    background-color: #7386e6;
     border-radius: 3px;
     display: flex;
     justify-content: center;
@@ -140,7 +141,7 @@
 }
 
 .btnSumar:hover {
-    background-color: cornflowerblue;
+    background-color: #242d59;
 }
 
 .btnRestar {
@@ -150,7 +151,7 @@
     align-items: center;
     height: 20px;
     border: none;
-    border: 1px solid grey;
+    background-color: #e66e65;
     border-radius: 3px;
     transition: all 0.2s;
     text-decoration: none;

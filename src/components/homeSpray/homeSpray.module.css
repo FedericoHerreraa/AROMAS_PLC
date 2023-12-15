@@ -1,16 +1,18 @@
 .proximo{
-    background-color: #e3b8d3;
+    /* background-color: #e3b8d3; */
+    background: linear-gradient(#ffff, #e3b8d3);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50px;
+    height: 90px;
     width: 100%;
 }
 .proximo h3{
     font-size: 30px;
     font-weight: 100;
     font-family: PlayFair;
+    padding-top: 25px;
 }
 
 .container {
