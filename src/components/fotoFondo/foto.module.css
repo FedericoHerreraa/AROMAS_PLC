@@ -1,0 +1,6 @@
+
+.img {
+    background-image: url('../../img/img_fondo.jpg');
+    background-attachment: fixed;
+    height: 300px;
+}

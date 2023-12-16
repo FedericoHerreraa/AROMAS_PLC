@@ -63,7 +63,7 @@ const FinalizarCompra = () => {
             </nav>
             <div className={stylesCompra.title}>
                 <div>
-                    <FaCartShopping size={'20px'}/>
+                    <FaCartShopping size={'23px'}/>
                 </div>
                 <h2>Resumen de compra</h2>
             </div>

@@ -7,6 +7,7 @@ import Box from "@mui/material/Box"
 import Carrito from "../carrito/carrito";
 import Badge from '@mui/material/Badge';
 import { useCart } from "../../context/CartContext";
+import Swal from 'sweetalert2'
 
 
 
@@ -68,7 +69,19 @@ const Header = () => {
               <button className={stylesHeader.btnCarrito} onClick={() => setOpen(true)}>Carrito</button>
             </Badge>
             {modal()}
-            <p className={stylesHeader.links} style={{ marginTop: '16px'}}>Eventos</p>
+            <button 
+              className={stylesHeader.eventos} 
+              onClick={() => {
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'info',
+                  title: 'No disponible...',
+                  text: 'Proximamente sección de eventos!'
+                });
+              }}
+              >
+                Eventos
+            </button>
             <Link to="/contactanos" className={stylesHeader.contacto}>Contacto</Link>
           </div>
         </nav>
