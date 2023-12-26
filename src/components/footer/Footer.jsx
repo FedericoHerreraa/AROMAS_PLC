@@ -1,6 +1,6 @@
 import stylesFooter from "./Footer.module.css"
 import { AiOutlineInstagram } from "react-icons/ai"
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import MailIcon from '@mui/icons-material/Mail';
 import { Link } from "react-router-dom"
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
         <div className={stylesFooter.footerContent}>
           <div className={stylesFooter.contactInfo}>
             <h4>Sobre nosotros</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, velit voluptatum in saepe ratione cupiditate maiores? Aliquam, eligendi fuga dolorum incidunt earum eveniet ad dolor cupiditate natus, explicabo laborum corporis!</p>
+            <p>Somos un equipo comprometido a ofrecer difusores de ambiente asequibles sin sacrificar calidad. Descubre la perfecta combinación entre precio y fragancia, creando ambientes encantadores a un costo accesible!</p>
           </div>
           <div className={stylesFooter.socialLinks}>
             <h4>Redes Sociales</h4>
@@ -26,8 +26,8 @@ const Footer = () => {
               <a target="blank" className={stylesFooter.ig} href="https://www.instagram.com/aromas.plc/">Instagram</a>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px'}}>
-              <WhatsAppIcon fontSize="small" style={{ color: 'green' }} size={'10px'} color="green"/>
-              <a target="blank" className={stylesFooter.num} href="https://www.instagram.com/aromas.plc/">+54 9 11 44559933</a>
+              <MailIcon fontSize="small" style={{ color: '#b86863' }} size={'10px'} color="green"/>
+              <a className={stylesFooter.num}>aromas.plc@gmail.com</a>
             </div>
           </div>
           <div className={stylesFooter.siteLinks}>

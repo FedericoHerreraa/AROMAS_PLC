@@ -2,8 +2,8 @@ import Header from '../../components/header/header'
 import Eventos from '../../components/eventos/eventos'
 import Footer from '../../components/footer/Footer'
 import Productos from '../../components/productos/productos'
-import HomeSpray from '../../components/homeSpray/homeSpray'
 import Foto from '../../components/fotoFondo/foto'
+import Velas from '../../components/velas/velas'
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
         <Eventos/>
         <Productos/>
         {/* <Foto/> */}
-        <HomeSpray/>
+        <Velas/>
         <Footer/>
     </div>
   )

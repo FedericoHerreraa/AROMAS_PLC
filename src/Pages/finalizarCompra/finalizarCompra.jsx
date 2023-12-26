@@ -85,11 +85,12 @@ const FinalizarCompra = () => {
                     </div>
                 </div>
                 <div className={stylesCompra.contenedorForm}>
-                    <form action="" ref={form} onSubmit={sendEmail}>
+                    <form style={{ width: '300px' }} action="" ref={form} onSubmit={sendEmail}>
+                        <h3>Formulario de compra:</h3>
                         <div className={stylesCompra.campo}>
-                            <label htmlFor="">Nombre y apellido:</label>
                             <input 
                                 required
+                                placeholder='Ingrese su nombre'
                                 type="text"
                                 name='user_name'
                                 onChange={(e) => setNombre(e.target.value)}
@@ -97,31 +98,31 @@ const FinalizarCompra = () => {
                                 />
                         </div>
                         <div className={stylesCompra.campo}>
-                            <label htmlFor="">Email:</label>
                             <input 
                                 type="email"
                                 required
+                                placeholder='Ingrese su email'
                                 name='user_email'
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)} 
                                 />
                         </div>
                         <div className={stylesCompra.campo}>
-                            <label htmlFor="">Direccion:</label>
                             <input 
                                 type="text"
                                 required
+                                placeholder='Ingrese su direccion'
                                 name='user_direccion'
                                 value={direccion}
                                 onChange={(e) => setDireccion(e.target.value)} 
                                 />
                         </div>
                         <div className={stylesCompra.campo}>
-                            <label htmlFor="">Numero de telefono:</label>
                             <input 
                                 type="number"
                                 required
                                 name='user_telefono'
+                                placeholder='Ingrese su telefono'
                                 value={telefono}
                                 onChange={(e) => setTelefono(e.target.value)} 
                                 />
