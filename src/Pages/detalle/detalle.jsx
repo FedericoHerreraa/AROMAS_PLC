@@ -82,7 +82,7 @@ const Detalle = () => {
               <h2>{products.nombre}</h2>
             </div>
             <p className={stylesDetalle.descripcion}>{products.descripcion}</p>
-            <p>Precio: ${products.precio}</p>
+            <p className={stylesDetalle.precio}>Precio: ${products.precio}</p>
             <div className={stylesDetalle.botones}>
               <div className={stylesDetalle.btnMasMenos}>
                 {cantidad == 0 ? (

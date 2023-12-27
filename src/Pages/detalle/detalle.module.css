@@ -93,6 +93,12 @@
 
 .descripcion {
     font-size: 20px;
+    font-family: Playfair-simple;
+}
+
+.precio {
+    font-family: Playfair-simple;
+    font-size: larger;
 }
 
 .botonCarrito {
