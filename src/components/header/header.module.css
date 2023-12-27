@@ -48,7 +48,8 @@
     text-decoration: none;
     color: black;
     font-family: Cinzel;
-    background-color: #b38471;
+    /* background-color: #b38471; */
+    background-color: #ab8a5e;
     padding: 5px 10px 5px 10px;
     border-radius: 15px;
     transition: all 0.2s;
