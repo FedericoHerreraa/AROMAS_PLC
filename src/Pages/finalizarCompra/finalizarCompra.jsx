@@ -72,20 +72,30 @@ const FinalizarCompra = () => {
                     {
                         cart.map(prod => {
                             return (
-                                <div key={prod.id}>
-                                    <p>{prod.nombre}</p>
-                                    <p>Precio: ${prod.precio * prod.cantidad}</p>
-                                    <p>Cantidad: {prod.cantidad}</p>
+                                <div key={prod.id} className={stylesCompra.item}>
+                                    <p className={stylesCompra.nombre}>{prod.nombre}</p>
+                                    <p className={stylesCompra.cantidad}>Cantidad: {prod.cantidad}</p>
+                                    <div style={{ display: 'flex', justifyContent: 'space-between'}}>
+                                        <p className={stylesCompra.precio}>Precio:</p>
+                                        <p>${prod.precio * prod.cantidad}</p>
+                                    </div>
                                 </div>
                             )
                         })
                     }
+                    <hr />
                     <div>
-                        {cart.length > 0 ? <p>Total a pagar: ${total()}</p> : ''}
+                        {cart.length > 0 ? (
+                            <div style={{ display: 'flex', justifyContent: 'space-between'}}>
+                                <p style={{ fontWeight: 'bold'}}>Total a pagar: </p>
+                                <p style={{ fontWeight: 'bold'}}>${total()}</p>
+                            </div>
+                            ) : ''
+                        }
                     </div>
                 </div>
                 <div className={stylesCompra.contenedorForm}>
-                    <form style={{ width: '300px' }} action="" ref={form} onSubmit={sendEmail}>
+                    <form style={{ width: '550px', display: 'flex', alignItems: 'center', flexDirection: 'column' }} action="" ref={form} onSubmit={sendEmail}>
                         <h3>Formulario de compra:</h3>
                         <div className={stylesCompra.campo}>
                             <input 

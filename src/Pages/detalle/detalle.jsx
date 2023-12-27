@@ -78,41 +78,48 @@ const Detalle = () => {
             <img src={products.img} alt="No se pudo cargar la imagen"/>
           </div>
           <div className={stylesDetalle.productoInfo}>
-            <h2>{products.nombre}</h2>
+            <div className={stylesDetalle.titulo}>
+              <h2>{products.nombre}</h2>
+            </div>
+            <p className={stylesDetalle.descripcion}>{products.descripcion}</p>
             <p>Precio: ${products.precio}</p>
-            <p>Descripcion del producto</p>
             <div className={stylesDetalle.botones}>
-              {cantidad == 0 ? (
-                <button className={stylesDetalle.botonCarrito}>
-                  Agregar al carrito: {cantidad}
-                </button>
-              ): (
-                <button 
-                  onClick={() => {
-                    setCantidad(0)
-                    addProd(products, cantidad
-                  )}} 
-                  className={stylesDetalle.botonCarrito}
-                >
-                  Agregar al carrito: {cantidad}
-                </button>
-              )  
-              }
               <div className={stylesDetalle.btnMasMenos}>
+                {cantidad == 0 ? (
+                    <button className={stylesDetalle.btnRestar}>
+                        <RemoveIcon fontSize="5px"/>
+                      </button>                
+                    ) : (
+                      <button className={stylesDetalle.btnRestar} onClick={() => setCantidad(cantidad - 1)}>
+                        <RemoveIcon fontSize="5px"/>
+                      </button>                
+                    )
+                }
+                <p>{cantidad}</p>
                 <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>
                   <AddIcon fontSize="5px"/>
                 </button>
-                {cantidad == 0 ? (
-                    <button className={stylesDetalle.btnRestar}>
-                      <RemoveIcon fontSize="5px"/>
-                    </button>                
-                  ) : (
-                    <button className={stylesDetalle.btnRestar} onClick={() => setCantidad(cantidad - 1)}>
-                      <RemoveIcon fontSize="5px"/>
-                    </button>                
-                  )
-                }
               </div>
+                {cantidad == 0 ? (
+                  <>
+                    <button className={stylesDetalle.botonCarrito}>
+                      Agregar al carrito
+                    </button>
+                  </>
+                ): (
+                  <>
+                    <button 
+                      onClick={() => {
+                        setCantidad(0)
+                        addProd(products, cantidad
+                      )}} 
+                      className={stylesDetalle.botonCarrito}
+                    >
+                      Agregar al carrito
+                    </button>
+                  </>
+                )  
+                }
             </div>
           </div>
         </div>

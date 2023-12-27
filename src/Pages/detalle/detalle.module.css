@@ -80,13 +80,27 @@
     margin-left: 50px;
 }
 
+.titulo {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo h2 {
+    font-family: Diphylleia;
+    font-size: 45px;
+}
+
+.descripcion {
+    font-size: 20px;
+}
+
 .botonCarrito {
-    padding: 10px 20px 10px 20px;
+    padding: 5px 20px 5px 20px;
     border-radius: 5px;
     border: 1px solid rgb(207, 138, 192);
     background-color: #cfb2c8;
     cursor: pointer;
-    margin-top: 20px;
     transition: all 0.2s;
     text-decoration: none;
     color: black;
@@ -115,22 +129,22 @@
 
 .botones {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    width: 170px;
+    flex-direction: column;
 }
 
 .btnMasMenos {
     display: flex;
-    flex-direction: column;
-    margin-left: 10px;
+    justify-content: space-between;
     margin-top: 20px;
 }
 
 .btnSumar {
-    margin-bottom: 4px;
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-color: #7386e6;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #a3458c;
+    background-color: #cfb2c8;
     border-radius: 3px;
     display: flex;
     justify-content: center;
@@ -141,17 +155,17 @@
 }
 
 .btnSumar:hover {
-    background-color: #242d59;
+    background-color: #a3458c;
 }
 
 .btnRestar {
-    width: 20px;
+    width: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
-    border: none;
-    background-color: #e66e65;
+    height: 25px;
+    border: 1px solid #a3458c;
+    background-color: #cfb2c8;
     border-radius: 3px;
     transition: all 0.2s;
     text-decoration: none;
@@ -159,7 +173,7 @@
 }
 
 .btnRestar:hover {
-    background-color: crimson;
+    background-color: #a3458c;
 }
 
 

@@ -8,6 +8,10 @@
 }
 
 @font-face {
+    font-family: Diphylleia;
+    src: url(/src/assets/fonts/Diphylleia-Regular.ttf);
+}
+@font-face {
     font-family: Playfair;
     src: url(/src/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf);
 }
