@@ -52,7 +52,26 @@ const Carrito = () => {
           <div>
             <p className={stylesCarrito.total}>Total: ${total()}</p>
             <button className={stylesCarrito.vacCarrito} onClick={vaciarCarrito}>Vaciar Carrito</button>
-            <Link to='/comprar' className={stylesCarrito.btnFinalCompra}>Finalizar compra</Link>
+            <Link 
+              onClick={() => {
+               window.scrollTo({
+                  top: 0,
+                  behavior: 'smooth'
+                })
+                } 
+              }
+              to='/comprar' 
+              className={stylesCarrito.btnFinalCompra}
+              >
+                Finalizar compra
+            </Link>
+
+
+            {/* {window.scrollTo({
+              top: 0,
+              behavior: 'smooth', // Opciones: 'auto', 'instant', o 'smooth'
+            })
+            } */}
           </div>
           ) : (
             <p>El carrito esta vacio!</p>

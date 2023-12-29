@@ -50,7 +50,7 @@ const Productos = () => {
           slidesToScroll: 1,
           centerMode: false,
           autoplay: true,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 3000,
         },
       },
     ],

@@ -86,6 +86,7 @@ img {
 @media screen and (max-width: 768px) {
     .prod {
         width: 250px;
+        box-shadow: 0px 0px 10px 0px;   
     }
 
     .container {

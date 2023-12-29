@@ -81,7 +81,7 @@
 }
 
 .titulo {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
 }
@@ -99,6 +99,7 @@
 .precio {
     font-family: Playfair-simple;
     font-size: larger;
+    margin-bottom: 20px;
 }
 
 .botonCarrito {
@@ -217,5 +218,9 @@
 
     .botones {
         margin-bottom: 20px;
+    }
+
+    .titulo {
+        justify-content: flex-start;
     }
 }
