@@ -49,6 +49,8 @@ const Productos = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
+          autoplay: true,
+          autoplaySpeed: 2000,
         },
       },
     ],
