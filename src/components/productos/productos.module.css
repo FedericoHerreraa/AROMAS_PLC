@@ -85,11 +85,11 @@ img {
 
 @media screen and (max-width: 768px) {
     .prod {
-        width: 205px;
+        width: 235px;
     }
 
     .container {
-        height: 570px;
+        height: 630px;
     }
 
     .nombre {
