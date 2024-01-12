@@ -24,6 +24,8 @@ export const ProdsProvider = ({ children }) => {
             setProducts(res.data)
         } catch (error) {
             console.log(error)
+        } finally {
+            setLoading(false)
         }
     }
 

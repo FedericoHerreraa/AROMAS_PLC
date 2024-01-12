@@ -11,7 +11,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useProds } from "../../context/ProdsContext";
 
 const Detalle = () => {
-  const { getProduct, products } = useProds()
+  const { getProduct, products, loading } = useProds()
   const params = useParams()
 
   useEffect(() => {
@@ -42,7 +42,7 @@ const Detalle = () => {
       )
   }
 
-  if (products.length === 0) {
+  if (loading) {
     return (
       <div class="spinner-border m-5" role="status">
         <span class="visually-hidden">Loading...</span>
