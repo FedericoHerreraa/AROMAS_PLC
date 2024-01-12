@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import stylesCompra from './finalizarCompra.module.css'
 import { useCart } from '../../context/CartContext'
-import { sendMailRequest } from '../../api/mail'
+import { 
+    sendUsPurchaseMailRequest,
+    sendThemPurchaseMailRequest 
+} from '../../api/mail'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
@@ -14,6 +17,7 @@ const FinalizarCompra = () => {
     const [direccion,setDireccion] = useState('')
     const [decision,setDecision] = useState('whatsapp')
     const [telefono,setTelefono] = useState('')
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -24,6 +28,7 @@ const FinalizarCompra = () => {
 
     const sendEmail = async (e) => {
         e.preventDefault();
+        setLoading(true)
 
         const info = {
             "nombre": nombre,
@@ -34,8 +39,13 @@ const FinalizarCompra = () => {
             "total": total()
         }
 
-        await sendMailRequest(info, cart)
-                
+        console.log(info)
+
+        await sendUsPurchaseMailRequest(info, cart)
+
+        await sendThemPurchaseMailRequest(info)
+        
+        setLoading(false)
         Swal.fire({
             title: 'Se ha realizado la compra con exito!',
             text: 'Deseas continuar?',
@@ -157,7 +167,7 @@ const FinalizarCompra = () => {
                             </select>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
-                            <input type="submit" value="Comprar" className={stylesCompra.btnCompra}/>
+                            <input type="submit" value={loading ? 'Enviando email...' : 'Comprar'} className={stylesCompra.btnCompra}/>
                         </div>
                     </form>
                 </div>

@@ -1,42 +1,53 @@
 import styleContacto from "./Contactanos.module.css"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import emailjs from '@emailjs/browser'
 import { AiFillInstagram, AiOutlineMail } from "react-icons/ai"
 import { BiSolidMap } from "react-icons/bi"
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom"
+import { 
+    sendUsQuestionMailRequest,
+    sendThemQuestionMailRequest 
+} from "../../api/mail"
 
 
 const Contactanos = () => {
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
     const [message,setMessage] = useState('')
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
 
     const handleName = e => setName(e.target.value)
-
-    const handleEmail = (e) => setEmail(e.target.value)
-
+    const handleEmail = e => setEmail(e.target.value)
     const handleMessage = e => setMessage(e.target.value)
 
-    const form = useRef()
-
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
+        setLoading(true)
 
-        emailjs.sendForm('service_l1bsp9f', 'template_outbd6o', form.current, 'C_Sfb7hmjQpTK2Brz')
-            .then((res) => {
-                console.log(res.text);
-            })    
-            .catch((error) => {
-                console.log(error.text);
-            })
-                
+        const info = {
+            "nombre": name,
+            "email": email,
+            "mensaje": message
+        }
+
+        await sendUsQuestionMailRequest(info)
+
+        await sendThemQuestionMailRequest(info)
+        
+        setLoading(false)
         Swal.fire({
             title: 'Se ha enviado el mensaje!',
             text: 'Deseas continuar?',
             icon: 'success',
             confirmButtonText: 'Aceptar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                navigate('/')
+            }
         })
+
         setEmail('')
         setName('')
         setMessage('')
@@ -80,7 +91,7 @@ const Contactanos = () => {
                 <Link className={styleContacto.botonVolver} to="/">Volver al menu inicial</Link>
                 <p className={styleContacto.derechos}>&copy; 2023 Aromas PLC. Todos los derechos reservados.</p>
             </div>
-            <form className={styleContacto.form} onSubmit={sendEmail} ref={form}>
+            <form className={styleContacto.form} onSubmit={sendEmail}>
                 <h1>Formulario de Contacto</h1>
                 <div>
                     <label>Nombre:</label>
@@ -109,14 +120,13 @@ const Contactanos = () => {
                         type="text" 
                         name="message"
                         value={message}
-                        onChange={handleMessage}
-                        
+                        onChange={handleMessage}            
                     />
                 </div>
                 <input 
                     className={styleContacto.btnEnviar} 
                     type="submit" 
-                    value="Enviar"
+                    value={loading ? 'Enviando email...' : 'Enviar'}
                     />
             </form>
         </div>
