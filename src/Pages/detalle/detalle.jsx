@@ -11,12 +11,20 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useProds } from "../../context/ProdsContext";
 
 const Detalle = () => {
-  const { getProduct, products, loading } = useProds()
+  const { getProduct, products } = useProds()
+  const [loading, setLoading] = useState(true)
   const params = useParams()
 
   useEffect(() => {
-    getProduct(params.id)
-  }, [])
+    if (loading) {
+      const loadData = async () => {
+        await getProduct(params.id)
+        setLoading(false)
+      }
+
+      loadData()
+    }
+  }, [getProduct])
 
   const { addProd, cart } = useCart()
 
