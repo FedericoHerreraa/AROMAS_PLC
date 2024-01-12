@@ -1,8 +1,6 @@
 import stylesDetalle from "./detalle.module.css";
-import { getProductById } from "../../products/products";
 import { useParams } from "react-router-dom";
-import { useAsync } from "../../hooks/useAsync";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
@@ -10,11 +8,15 @@ import Carrito from "../../components/carrito/carrito";
 import Badge from '@mui/material/Badge';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import { useProds } from "../../context/ProdsContext";
 
 const Detalle = () => {
-  const { id } = useParams();
-  const product = () => getProductById(id);
-  const [products, error, loading] = useAsync(product, id);
+  const { getProduct, products } = useProds()
+  const params = useParams()
+
+  useEffect(() => {
+    getProduct(params.id)
+  }, [])
 
   const { addProd, cart } = useCart()
 
@@ -40,13 +42,7 @@ const Detalle = () => {
       )
   }
 
-  if (error) {
-    <div>
-      <h1>Hubo un error con la carga del producto</h1>
-    </div>
-  }
-
-  if (loading) {
+  if (products.length === 0) {
     return (
       <div class="spinner-border m-5" role="status">
         <span class="visually-hidden">Loading...</span>

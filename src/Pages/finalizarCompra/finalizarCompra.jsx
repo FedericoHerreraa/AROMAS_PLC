@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import stylesCompra from './finalizarCompra.module.css'
 import { useCart } from '../../context/CartContext'
-import emailjs from '@emailjs/browser'
+import { sendMailRequest } from '../../api/mail'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
@@ -13,28 +13,28 @@ const FinalizarCompra = () => {
     const [email,setEmail] = useState('')
     const [direccion,setDireccion] = useState('')
     const [decision,setDecision] = useState('whatsapp')
-    const [telefono,setTelefono] = useState()
+    const [telefono,setTelefono] = useState('')
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (decision === '') {
+        if (decision === '' || decision === undefined || decision === null) {
             setDecision('whatsapp')
         }
-    }, [])
+    }, [decision])
 
-    const form = useRef()
-
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_l1bsp9f', 'template_es5doqv', form.current , 'C_Sfb7hmjQpTK2Brz')
-            .then((res) => {
-                console.log(res.text);
-                vaciarCarrito()
-            })
-            .catch((error) => {
-                console.log(error.text);
-            });
+        const info = {
+            "nombre": nombre,
+            "email": email,
+            "direccion": direccion,
+            "decision": decision,
+            "telefono": telefono,
+            "total": total()
+        }
+
+        await sendMailRequest(info, cart)
                 
         Swal.fire({
             title: 'Se ha realizado la compra con exito!',
@@ -44,6 +44,7 @@ const FinalizarCompra = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 navigate('/')
+                vaciarCarrito()
             }
         })
 
@@ -72,7 +73,7 @@ const FinalizarCompra = () => {
                     {
                         cart.map(prod => {
                             return (
-                                <div key={prod.id} className={stylesCompra.item}>
+                                <div key={prod._id} className={stylesCompra.item}>
                                     <p className={stylesCompra.nombre}>{prod.nombre}</p>
                                     <p className={stylesCompra.cantidad}>Cantidad: {prod.cantidad}</p>
                                     <div style={{ display: 'flex', justifyContent: 'space-between'}}>
@@ -95,7 +96,7 @@ const FinalizarCompra = () => {
                     </div>
                 </div>
                 <div className={stylesCompra.contenedorForm}>
-                    <form style={{ width: '550px', display: 'flex', alignItems: 'center', flexDirection: 'column' }} action="" ref={form} onSubmit={sendEmail}>
+                    <form style={{ width: '550px', display: 'flex', alignItems: 'center', flexDirection: 'column' }} onSubmit={sendEmail}>
                         <h3>Formulario de compra:</h3>
                         <div className={stylesCompra.campo}>
                             <input 
@@ -155,15 +156,6 @@ const FinalizarCompra = () => {
                                 <option required value="email">Email</option>
                             </select>
                         </div>
-                        {cart.map((prod, index) => (
-                            <div key={prod.id}>
-                                <input type="hidden" name={`prod_nombre_${index}`} value={prod.nombre} />
-                                <input type="hidden" name={`prod_precio_${index}`} value={prod.precio * prod.cantidad} />
-                                <input type="hidden" name={`prod_cantidad_${index}`} value={prod.cantidad} />
-                            </div>
-                        ))}
-                        <input type="hidden" name='totalAPagar' value={total()}/>
-                        <input type="hidden" name='decision' value={decision}/>
                         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px'}}>
                             <input type="submit" value="Comprar" className={stylesCompra.btnCompra}/>
                         </div>

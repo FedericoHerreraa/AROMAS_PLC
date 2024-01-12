@@ -9,12 +9,12 @@ export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
     const addProd = (prod, cantidad) => {
-        if (!existe(prod.id)) {
+        if (!existe(prod._id)) {
             setCart(prev => [...prev, { ...prod, cantidad }])
         } else {
             setCart(prev => 
                 prev.map(item => 
-                    item.id === prod.id
+                    item._id === prod._id
                         ? { ...item, cantidad: item.cantidad + cantidad }
                         : item
                 )
@@ -25,17 +25,17 @@ export const CartProvider = ({ children }) => {
     const eliminarProd = (id, nuevaCantidad) => {
         setCart((prevCart) => {
             if (nuevaCantidad === 0) {
-              return prevCart.filter((prod) => prod.id !== id);
+              return prevCart.filter((prod) => prod._id !== id);
             } else {
               return prevCart.map((prod) =>
-                prod.id === id ? { ...prod, cantidad: nuevaCantidad } : prod
+                prod._id === id ? { ...prod, cantidad: nuevaCantidad } : prod
               );
             }
         });
     }
 
     const existe = (idProd) => {
-        return cart.some(prod => prod.id === idProd)
+        return cart.some(prod => prod._id === idProd)
     }
 
     const vaciarCarrito = () => {

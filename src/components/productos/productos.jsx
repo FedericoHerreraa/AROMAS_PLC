@@ -1,15 +1,25 @@
-import { useAsync } from "../../hooks/useAsync";
-import { getProducts } from "../../products/products";
 import stylesProducts from "./productos.module.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useProds } from "../../context/ProdsContext";
 
 const Productos = () => {
-  const products = () => getProducts();
-  const [productos, error, loading] = useAsync(products);
+  const { getProducts, products } = useProds()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (loading) {
+      const loadData = async () => {
+        await getProducts()
+        setLoading(false)
+      }
+      loadData()
+    }
+  }, [getProducts])
+
 
   function Arrow(props) {
     const { className, onClick } = props;
@@ -30,7 +40,6 @@ const Productos = () => {
     );
   }
   
-
   const [sliderSettings] = useState({
     infinite: true,
     className: stylesProducts.slider,
@@ -57,13 +66,7 @@ const Productos = () => {
 
   });
 
-  if (error) {
-    return (
-      <div>
-        <h1>Ha ocurrido un error: {error}</h1>
-      </div>
-    );
-  }
+
 
   if (loading) {
     return (
@@ -81,8 +84,8 @@ const Productos = () => {
     <div className={stylesProducts.container}>
       <h1 className={stylesProducts.tituloProds}>Nuestros Productos</h1>
       <Slider {...sliderSettings}>
-        {productos.map((prod) => (
-          <Link key={prod.id} className={stylesProducts.detalle} to={`/detalle/${prod.id}`}>
+        {products.map((prod) => (
+          <Link key={prod._id} className={stylesProducts.detalle} to={`/detalle/${prod._id}`}>
             <div className={stylesProducts.prod}>
               <img src={prod.img} className={stylesProducts.img} alt="No se pudo cargar la imagen"/>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>

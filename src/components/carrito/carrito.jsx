@@ -14,7 +14,7 @@ const Carrito = () => {
         let cantidad = prod.cantidad
 
         return (
-          <div key={prod.id} className={stylesCarrito.contenedorProduct}>
+          <div key={prod._id} className={stylesCarrito.contenedorProduct}>
             <div style={{ display: 'flex' }}>
               <img src={prod.img} alt="" />
               <div className={stylesCarrito.productInfo}>
@@ -54,6 +54,7 @@ const Carrito = () => {
             <button className={stylesCarrito.vacCarrito} onClick={vaciarCarrito}>Vaciar Carrito</button>
             <Link 
               onClick={() => {
+                console.log(cart)
                window.scrollTo({
                   top: 0,
                   behavior: 'smooth'
@@ -65,13 +66,6 @@ const Carrito = () => {
               >
                 Finalizar compra
             </Link>
-
-
-            {/* {window.scrollTo({
-              top: 0,
-              behavior: 'smooth', // Opciones: 'auto', 'instant', o 'smooth'
-            })
-            } */}
           </div>
           ) : (
             <p>El carrito esta vacio!</p>
