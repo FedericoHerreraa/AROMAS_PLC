@@ -55,7 +55,7 @@ const Carrito = () => {
             <Link 
               onClick={() => {
                 console.log(cart)
-               window.scrollTo({
+                window.scrollTo({
                   top: 0,
                   behavior: 'smooth'
                 })
