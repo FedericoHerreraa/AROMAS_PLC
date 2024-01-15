@@ -38,7 +38,7 @@ const Carrito = () => {
                 onClick={() => {
                   cantidad = cantidad - 1
                   precio = prod.precio * cantidad
-                  eliminarProd(prod.id, cantidad)
+                  eliminarProd(prod._id, cantidad)
                 }}
                 >
                 <RemoveIcon fontSize="10px" style={{ textDecoration: "none", color: 'black' }}/>
