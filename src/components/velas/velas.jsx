@@ -1,5 +1,7 @@
 import stylesVelas from "./velas.module.css"
 import Swal from 'sweetalert2'
+import velaCocoVaini from '../../img/velaCocoVaini.jpg'
+import velaFrutosRojos from '../../img/velaFrutosRojos.avif'
 
 const Velas = () => {
   const btn = () => {
@@ -19,50 +21,32 @@ const Velas = () => {
       <div className={stylesVelas.container}>
         <div className={stylesVelas.card}>
           <div className={stylesVelas.contImg}>
-            <img src='https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg' alt="" className={stylesVelas.img} />
-            <div className={stylesVelas.contImgChica}>
-              <img src="https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg" alt="" className={stylesVelas.imgChica}/>
-              <img src="https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg" alt="" className={stylesVelas.imgChica}/>
-            </div>
+            <img src={velaCocoVaini} alt="" className={stylesVelas.img} />
+            {/* <div className={stylesVelas.contImgChica}>
+              <img src='https://hierbassuquia.com.ar/wp-content/uploads/2018/09/Vainilla-en-Chauchas-1.jpg' alt="" className={stylesVelas.imgChica}/>
+              <img src="https://www.cocinista.es/download/bancorecursos/ingredientes/ingrediente-coco.jpg" alt="" className={stylesVelas.imgChica}/>
+            </div> */}
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto rerum accusantium quas soluta aut quisquam ipsam eius, libero commodi minus corrupti tenetur ratione nam repellendus eaque laudantium deleniti neque provident.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae aliquid sapiente nobis cum quaerat soluta commodi culpa odio quisquam, reprehenderit iure maxime ut, dolores non ab atque voluptatum hic totam.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dolor quas illum, impedit neque ducimus voluptatum quos non ea praesentium debitis ab culpa nihil fugit, est eius, rerum id dolorem?
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px', marginTop: '20px' }}>
+            <h3>Coco-Vainilla</h3>
+            <p style={{ fontSize: "18px"}}>Sumérgete en la indulgencia tropical con nuestra vela Coco-Vainilla. La fusión de coco y vainilla crea un ambiente cálido y acogedor. Con un precio de 2300, esta vela elegante y aromática es la elección perfecta para transformar cualquier espacio en un refugio relajante. Experimenta la armonía de los aromas exquisitos con nuestra vela Coco-Vainilla: lujo asequible para tus sentidos.
             </p>
             <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
           </div>
         </div>
         <div className={stylesVelas.card}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  marginBottom: '20px' }}>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, quaerat beatae! Ad sint rem debitis quia officiis. Dolorem aperiam nulla repudiandae nemo assumenda, magnam blanditiis est ea nesciunt alias. Tenetur!
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae aliquid sapiente nobis cum quaerat soluta commodi culpa odio quisquam, reprehenderit iure maxime ut, dolores non ab atque voluptatum hic totam.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dolor quas illum, impedit neque ducimus voluptatum quos non ea praesentium debitis ab culpa nihil fugit, est eius, rerum id dolorem?
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  marginBottom: '20px', marginTop: '20px' }}>
+            <h3>Frutos Rojos</h3>
+            <p style={{ fontSize: "18px"}}>Descubre el encanto de nuestro difusor de aromas Frutos Rojos, una experiencia sensorial que transforma tu espacio en un paraíso olfativo vibrante. La cuidada fusión de bayas y frutos rojos despierta tus sentidos, creando una atmósfera envolvente y revitalizante. Con un precio de 2300, este elegante difusor no solo embellece tu entorno, sino que también se convierte en un regalo excepcional. La presentación sofisticada y la liberación gradual de fragancias hacen de este difusor una elección única. Suma un toque de lujo a tu vida cotidiana con la frescura irresistiblemente dulce de nuestro difusor de Frutos Rojos.
             </p>
             <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
           </div>
           <div className={stylesVelas.contImg}>
-            <img src='https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg' alt="" className={stylesVelas.img} />
-            <div className={stylesVelas.contImgChica}>
-              <img src="https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg" alt="" className={stylesVelas.imgChica}/>
-              <img src="https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg" alt="" className={stylesVelas.imgChica}/>
-            </div>
-          </div>
-        </div>
-        <div className={stylesVelas.card}>
-          <div className={stylesVelas.contImg}>
-            <img src='https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg' alt="" className={stylesVelas.img} />
-            <div className={stylesVelas.contImgChica}>
-              <img src="https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg" alt="" className={stylesVelas.imgChica}/>
-              <img src="https://acdn.mitiendanube.com/stores/492/056/products/img_35481-396b97c13d9d430d5416549593579806-1024-1024.jpg" alt="" className={stylesVelas.imgChica}/>
-            </div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto repellat nobis laboriosam pariatur at unde, eligendi iusto eius ipsum neque totam, assumenda quo dolores consequatur vero quia veritatis blanditiis corrupti?
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae aliquid sapiente nobis cum quaerat soluta commodi culpa odio quisquam, reprehenderit iure maxime ut, dolores non ab atque voluptatum hic totam.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dolor quas illum, impedit neque ducimus voluptatum quos non ea praesentium debitis ab culpa nihil fugit, est eius, rerum id dolorem?
-            </p>
-            <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
+            {/* <div className={stylesVelas.contImgChica}>
+              <img src="https://libbys.es/wordpress/wp-content/uploads/2017/05/frutosrojoscalor%C3%ADas.jpg" alt="" className={stylesVelas.imgChica}/>
+              <img src="https://acdn.mitiendanube.com/stores/001/679/168/products/mix-frutos-rojos-especial1-c1228e22be831cd3a116217121865533-640-0.jpg" alt="" className={stylesVelas.imgChica}/>
+            </div> */}
+            <img src={velaFrutosRojos} alt="" className={stylesVelas.img} />
           </div>
         </div>
       </div>

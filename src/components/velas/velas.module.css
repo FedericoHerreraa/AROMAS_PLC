@@ -1,5 +1,4 @@
 .proximo{
-    /* background-color: #e3b8d3; */
     background-color: #e3b8d3;
     display: flex;
     justify-content: center;
@@ -86,7 +85,7 @@
     }
 
     .img {
-        height: 390px;
+        height: 450px;
         width: 100%;
     }
 
@@ -96,10 +95,11 @@
 
     .contImgChica {
         flex-direction: row;
+        width: fit-content;
     }
 
     .imgChica {
         height: 200px;
-        width: 200px;
+        width: fit-content;
     }
 }
