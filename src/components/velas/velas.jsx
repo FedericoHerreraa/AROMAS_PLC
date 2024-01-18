@@ -63,13 +63,13 @@ const Velas = () => {
             ) : (
               <>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px', marginTop: '20px' }}>
-                  <h3>{velaFrutosRojos}</h3>
+                  <h3>{vela.nombre}</h3>
                   <p style={{ fontSize: "18px"}}>{vela.descripcion}
                   </p>
                   <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
                 </div>
                 <div className={stylesVelas.contImg}>
-                  <img src={vela.img} alt="" className={stylesVelas.img} />
+                  <img src={velaFrutosRojos} alt="" className={stylesVelas.img} />
                 </div>
               </>
             )}
