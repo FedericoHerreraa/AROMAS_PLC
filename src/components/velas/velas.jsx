@@ -51,7 +51,7 @@ const Velas = () => {
             {index % 2 === 0 ? (
               <>
                 <div className={stylesVelas.contImg}>
-                  <img src={vela.img} alt="" className={stylesVelas.img} />
+                  <img src={velaCocoVaini} alt="" className={stylesVelas.img} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px', marginTop: '20px' }}>
                   <h3>{vela.nombre}</h3>
@@ -63,7 +63,7 @@ const Velas = () => {
             ) : (
               <>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px', marginTop: '20px' }}>
-                  <h3>{vela.nombre}</h3>
+                  <h3>{velaFrutosRojos}</h3>
                   <p style={{ fontSize: "18px"}}>{vela.descripcion}
                   </p>
                   <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
