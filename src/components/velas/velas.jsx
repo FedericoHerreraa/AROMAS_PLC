@@ -29,7 +29,7 @@ const Velas = () => {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px', marginTop: '20px' }}>
             <h3>Coco-Vainilla</h3>
-            <p style={{ fontSize: "18px"}}>Sumérgete en la indulgencia tropical con nuestra vela Coco-Vainilla. La fusión de coco y vainilla crea un ambiente cálido y acogedor. Con un precio de 2300, esta vela elegante y aromática es la elección perfecta para transformar cualquier espacio en un refugio relajante. Experimenta la armonía de los aromas exquisitos con nuestra vela Coco-Vainilla: lujo asequible para tus sentidos.
+            <p style={{ fontSize: "18px"}}>Sumérgete en la indulgencia tropical con nuestra vela Coco-Vainilla. La fusión de coco y vainilla crea un ambiente cálido y acogedor. Con un precio de 3200, esta vela elegante y aromática es la elección perfecta para transformar cualquier espacio en un refugio relajante. Experimenta la armonía de los aromas exquisitos con nuestra vela Coco-Vainilla: lujo asequible para tus sentidos.
             </p>
             <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
           </div>
@@ -37,7 +37,7 @@ const Velas = () => {
         <div className={stylesVelas.card}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  marginBottom: '20px', marginTop: '20px' }}>
             <h3>Frutos Rojos</h3>
-            <p style={{ fontSize: "18px"}}>Descubre el encanto de nuestro difusor de aromas Frutos Rojos, una experiencia sensorial que transforma tu espacio en un paraíso olfativo vibrante. La cuidada fusión de bayas y frutos rojos despierta tus sentidos, creando una atmósfera envolvente y revitalizante. Con un precio de 2300, este elegante difusor no solo embellece tu entorno, sino que también se convierte en un regalo excepcional. La presentación sofisticada y la liberación gradual de fragancias hacen de este difusor una elección única. Suma un toque de lujo a tu vida cotidiana con la frescura irresistiblemente dulce de nuestro difusor de Frutos Rojos.
+            <p style={{ fontSize: "18px"}}>Descubre el encanto de nuestro difusor de aromas Frutos Rojos, una experiencia sensorial que transforma tu espacio en un paraíso olfativo vibrante. La cuidada fusión de bayas y frutos rojos despierta tus sentidos, creando una atmósfera envolvente y revitalizante. Con un precio de 3200, este elegante difusor no solo embellece tu entorno, sino que también se convierte en un regalo excepcional. La presentación sofisticada y la liberación gradual de fragancias hacen de este difusor una elección única. Suma un toque de lujo a tu vida cotidiana con la frescura irresistiblemente dulce de nuestro difusor de Frutos Rojos.
             </p>
             <button onClick={btn} className={stylesVelas.btnAgregar}>Agregar</button>
           </div>
