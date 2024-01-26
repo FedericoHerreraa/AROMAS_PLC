@@ -23,8 +23,8 @@ const Velas = () => {
     Swal.fire({
       position: 'top-end',
       icon: 'info',
-      title: 'No disponible por el momento...',
-      text: 'Proximamente!'
+      title: '¡Todas las velas se hacen por encargo!',
+      text: 'Hace tu pedido al +54 9 11 2275-8931.'
     });
   }
 
