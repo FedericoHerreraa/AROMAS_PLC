@@ -22,9 +22,17 @@ const Velas = () => {
     }
   }, [getAllVelas])
 
+  
+
   const htmlCelu = `
     <div>
-      <a href=></a>
+      <a href="https://api.whatsapp.com/send?phone=5491122758931" target="_blank">Hace tu pedido aca.</a>
+    </div>
+  `
+
+  const htmlCompu = `
+    <div>
+      <p>Hace tu pedido al +54 9 11 2275-8931</p>
     </div>
   `
 
@@ -33,7 +41,7 @@ const Velas = () => {
       position: 'top-end',
       icon: 'info',
       title: '¡Todas las velas se hacen por encargo!',
-      text: 'Hace tu pedido al +54 9 11 2275-8931'
+      html: mobile ? htmlCelu : htmlCompu
     });
   }
 
