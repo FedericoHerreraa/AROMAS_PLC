@@ -9,6 +9,9 @@ const Velas = () => {
   const [loading, setLoading] = useState(true)
   const { velas, getAllVelas } = useProds()
 
+  const isMobile = () => window.innerWidth < 768
+  const mobile = isMobile() 
+
   useEffect(() => {
     if (loading) {
       const loadData = async () => {
@@ -24,7 +27,7 @@ const Velas = () => {
       position: 'top-end',
       icon: 'info',
       title: '¡Todas las velas se hacen por encargo!',
-      text: 'Hace tu pedido al +54 9 11 2275-8931.'
+      text: mobile ? 'desde celu' : 'desde compu'
     });
   }
 
