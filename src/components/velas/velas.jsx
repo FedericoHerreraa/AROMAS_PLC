@@ -26,7 +26,7 @@ const Velas = () => {
 
   const htmlCelu = `
     <div>
-      <a href="https://api.whatsapp.com/send?phone=5491122758931&text=Hace%20tu%20pedido%20aca." style="text-decoration: none;" target="_blank">Hace tu pedido aca.</a>
+      <a href="https://api.whatsapp.com/send?phone=5491122758931&text=Hace%20tu%20pedido%20aca" style="text-decoration: none;" target="_blank">Hace tu pedido aca.</a>
     </div>
   `
 
