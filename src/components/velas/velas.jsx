@@ -22,12 +22,18 @@ const Velas = () => {
     }
   }, [getAllVelas])
 
+  const htmlCelu = `
+    <div>
+      <a href=></a>
+    </div>
+  `
+
   const btn = () => {
     Swal.fire({
       position: 'top-end',
       icon: 'info',
       title: '¡Todas las velas se hacen por encargo!',
-      text: mobile ? 'desde celu' : 'desde compu'
+      text: 'Hace tu pedido al +54 9 11 2275-8931'
     });
   }
 
