@@ -101,6 +101,7 @@ const Contactanos = () => {
                         name="user_name"
                         value={name}
                         onChange={handleName}
+                        required
                     />
                 </div>
                 <div>
@@ -111,6 +112,7 @@ const Contactanos = () => {
                         name="user_email"
                         value={email}
                         onChange={handleEmail}
+                        required
                     />
                 </div>
                 <div>
@@ -120,7 +122,8 @@ const Contactanos = () => {
                         type="text" 
                         name="message"
                         value={message}
-                        onChange={handleMessage}            
+                        onChange={handleMessage}
+                        required            
                     />
                 </div>
                 <input 
