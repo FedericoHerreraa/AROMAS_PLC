@@ -97,7 +97,7 @@ const Detalle = () => {
                     )
                 }
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <p>{cantidad}</p>
+                  <p className={stylesDetalle.cantidad}>{cantidad}</p>
                 </div>
                 <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>
                   <AddIcon fontSize="5px"/>
