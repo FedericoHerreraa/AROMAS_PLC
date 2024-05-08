@@ -52,8 +52,14 @@ const Detalle = () => {
 
   if (loading) {
     return (
-      <div class="spinner-border m-5" role="status">
-        <span class="visually-hidden">Loading...</span>
+      <div className={stylesDetalle.skeletonContainer}>
+        <div className={stylesDetalle.skeletonImage}></div>
+        <div className={stylesDetalle.skeletonInfo}>
+          <div className={stylesDetalle.skeletonTitle}></div>
+          <div className={stylesDetalle.skeletonDescription}></div>
+          <div className={stylesDetalle.skeletonPrice}></div>
+          <div className={stylesDetalle.skeletonButtons}></div>
+        </div>
       </div>
     )
   }
