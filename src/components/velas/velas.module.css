@@ -17,7 +17,7 @@
 
 .container {
     padding: 20px 100px 20px 100px;
-    background: linear-gradient(#e3b8d3, #ffff)
+    background: linear-gradient(#e9c8dd, #ffff)
 }
 
 .card {
@@ -75,7 +75,7 @@
 }
 
 .btnAgregar:hover {
-    padding: 10px 25px 10px 25px;
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 768px) {
