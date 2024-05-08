@@ -1,7 +1,6 @@
 import stylesVelas from "./velas.module.css";
 
 const VelasSkeleton = () => {
-    // Genera un array de 4 elementos para mostrar 4 items en el skeleton
     const skeletonItems = Array.from({ length: 4 }, (_, index) => (
         <div key={index} className={stylesVelas.card}>
             <div className={stylesVelas.contImg}>
@@ -18,7 +17,7 @@ const VelasSkeleton = () => {
     return (
         <div className={stylesVelas.container}>
             <div className={stylesVelas.proximo}>
-                <h3>Cargando velas...</h3>
+                <h3>Velas Aromáticas</h3>
             </div>
             <div>{skeletonItems}</div>
         </div>
