@@ -99,7 +99,7 @@ const Detalle = () => {
                       </button>                
                     )
                 }
-                <div style={{ justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
                   <p>{cantidad}</p>
                 </div>
                 <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>
