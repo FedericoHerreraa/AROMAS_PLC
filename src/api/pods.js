@@ -1,5 +1,6 @@
 import axios from 'axios'
+import { production, development } from './mail'
 
-export const getAllProductsRequest = async () => axios.get('https://aromasplcbackend.onrender.com/api/getProds')
+export const getAllProductsRequest = async () => axios.get(`${production}/api/getProds`)
 
-export const getProductRequest = async (id) => axios.get(`https://aromasplcbackend.onrender.com/api/getProd/${id}`)
+export const getProductRequest = async (id) => axios.get(`${production}/api/getProd/${id}`)
