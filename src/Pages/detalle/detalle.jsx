@@ -24,7 +24,7 @@ const Detalle = () => {
 
       loadData()
     }
-  }, [getProduct])
+  }, [getProduct, loading, params.id])
 
   const { addProd, cart } = useCart()
 

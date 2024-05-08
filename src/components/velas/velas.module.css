@@ -28,6 +28,12 @@
     background-color: white;
     border-radius: 5px;
     padding: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    padding: 25px;
 }
 
 .card p {
