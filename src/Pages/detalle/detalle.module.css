@@ -137,7 +137,7 @@
 .botones {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
     width: 170px;
     flex-direction: column;
 }
@@ -145,6 +145,7 @@
 .btnMasMenos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
     border: 1px solid rgb(214, 137, 210);
     border-radius: 10px;
