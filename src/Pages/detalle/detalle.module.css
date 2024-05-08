@@ -144,6 +144,7 @@
 .btnMasMenos {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px; /* Ajusta el espacio entre los elementos */
     margin-top: 20px;
     border: 1px solid rgb(214, 137, 210);
@@ -172,6 +173,9 @@
 }
 
 .cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 16px; /* Ajusta el tamaño de la fuente del contador */
 }
 
