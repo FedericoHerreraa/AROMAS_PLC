@@ -1,6 +1,6 @@
 .container {
     padding: 20px 100px 20px 100px;
-    background: linear-gradient(#e9c8dd, #ffff)
+    background: linear-gradient(#f1d3e6, #ffff)
 }
 
 .proximo{
@@ -9,8 +9,6 @@
     align-items: center;
     flex-direction: column;
     height: 90px;
-    width: 100%;
-    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 .proximo h3{
     font-size: 35px;
