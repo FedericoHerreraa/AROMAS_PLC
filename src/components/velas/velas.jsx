@@ -4,6 +4,7 @@ import velaCocoVaini from '../../img/velaCocoVaini.jpg'
 import velaFrutosRojos from '../../img/velaFrutosRojos.avif'
 import { useState, useEffect } from "react"
 import { useProds } from "../../context/ProdsContext"
+import VelasSkeleton from "../../skeletons/velasSkeleton/VelasSkeleton"
 
 const Velas = () => {
   const [loading, setLoading] = useState(true)
@@ -46,15 +47,7 @@ const Velas = () => {
   }
 
   if (loading) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-        <div className="spinner">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      </div>
-    )
+    return <VelasSkeleton />
   }
 
   return (

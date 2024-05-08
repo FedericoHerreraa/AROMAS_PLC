@@ -9,6 +9,7 @@ import Badge from '@mui/material/Badge';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useProds } from "../../context/ProdsContext";
+import DetalleSkeleton from "../../skeletons/detalleSkeleton/DetalleSkeleton";
 
 const Detalle = () => {
   const { getProduct, products } = useProds()
@@ -51,17 +52,7 @@ const Detalle = () => {
   }
 
   if (loading) {
-    return (
-      <div className={stylesDetalle.skeletonContainer}>
-        <div className={stylesDetalle.skeletonImage}></div>
-        <div className={stylesDetalle.skeletonInfo}>
-          <div className={stylesDetalle.skeletonTitle}></div>
-          <div className={stylesDetalle.skeletonDescription}></div>
-          <div className={stylesDetalle.skeletonPrice}></div>
-          <div className={stylesDetalle.skeletonButtons}></div>
-        </div>
-      </div>
-    )
+    return <DetalleSkeleton/>
   }
 
   return (

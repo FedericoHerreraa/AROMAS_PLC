@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useProds } from "../../context/ProdsContext";
+import ProductosSkeleton from "../../skeletons/productsSkeleton/ProductsSkeleton";
 
 const Productos = () => {
   const { getProducts, products } = useProds()
@@ -70,15 +71,7 @@ const Productos = () => {
 
 
   if (loading) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-        <div className="spinner">
-          <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      </div>
-    )
+    return <ProductosSkeleton/>
   }
 
   return (

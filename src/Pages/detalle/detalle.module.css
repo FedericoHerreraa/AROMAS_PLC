@@ -187,62 +187,6 @@
     background-color: #a3458c;
 }
 
-
-/* SKELETON */
-.skeletonContainer {
-    display: flex;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.skeletonImage {
-    width: 400px;
-    height: 500px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-.skeletonInfo {
-    flex: 1;
-    margin-left: 20px;
-}
-
-.skeletonTitle {
-    width: 80%;
-    height: 30px;
-    background-color: #f0f0f0;
-    margin-bottom: 10px;
-}
-
-.skeletonDescription {
-    width: 100%;
-    height: 100px;
-    background-color: #f0f0f0;
-    margin-bottom: 10px;
-}
-
-.skeletonPrice {
-    width: 60%;
-    height: 20px;
-    background-color: #f0f0f0;
-    margin-bottom: 10px;
-}
-
-.skeletonButtons {
-    display: flex;
-}
-
-.skeletonButtons>div {
-    width: 50px;
-    height: 30px;
-    background-color: #f0f0f0;
-    margin-right: 10px;
-}
-
-/* SKELETON */
-
-
 @media screen and (max-width: 768px) {
     .navTitle {
         margin-left: 0px;
