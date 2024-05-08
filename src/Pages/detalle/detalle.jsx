@@ -99,7 +99,9 @@ const Detalle = () => {
                       </button>                
                     )
                 }
-                <p>{cantidad}</p>
+                <div style={{ justifyContent: 'center' }}>
+                  <p>{cantidad}</p>
+                </div>
                 <button className={stylesDetalle.btnSumar} onClick={() => setCantidad(cantidad + 1)}>
                   <AddIcon fontSize="5px"/>
                 </button>
