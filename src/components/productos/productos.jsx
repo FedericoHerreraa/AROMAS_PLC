@@ -18,10 +18,11 @@ const Productos = () => {
       }
       loadData()
     }
-  }, [getProducts])
+  }, [getProducts, loading])
 
 
   function Arrow(props) {
+    // eslint-disable-next-line react/prop-types
     const { className, onClick } = props;
     return (
       <div

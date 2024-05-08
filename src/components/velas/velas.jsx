@@ -20,7 +20,7 @@ const Velas = () => {
       }
       loadData()
     }
-  }, [getAllVelas])
+  }, [getAllVelas, loading])
 
   
 

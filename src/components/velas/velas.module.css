@@ -6,6 +6,7 @@
     flex-direction: column;
     height: 90px;
     width: 100%;
+    box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
 .proximo h3{
     font-size: 35px;
@@ -26,7 +27,6 @@
     margin-bottom: 20px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px;
 }
 
 .card p {
@@ -61,7 +61,7 @@
 .btnAgregar {
     border: none;
     padding: 7px 15px 7px 15px;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(223, 173, 212);
     border-radius: 30px;
     color: black;
     transition: all 0.2s;
