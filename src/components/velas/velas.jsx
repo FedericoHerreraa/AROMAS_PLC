@@ -58,11 +58,11 @@ const Velas = () => {
   }
 
   return (
-    <div>
+    <div className={stylesVelas.container}>
       <div className={stylesVelas.proximo}>
           <h3 >¡Velas aromáticas!</h3>
       </div>
-      <div className={stylesVelas.container}>
+      <div>
         {velas.map((vela, index) => (
           <div key={index} className={stylesVelas.card}>
             {index % 2 === 0 ? (

@@ -1,5 +1,9 @@
+.container {
+    padding: 20px 100px 20px 100px;
+    background: linear-gradient(#e9c8dd, #ffff)
+}
+
 .proximo{
-    background-color: #e3b8d3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,10 +19,6 @@
     border-bottom: 1px solid black;
 }
 
-.container {
-    padding: 20px 100px 20px 100px;
-    background: linear-gradient(#e9c8dd, #ffff)
-}
 
 .card {
     display: flex;
