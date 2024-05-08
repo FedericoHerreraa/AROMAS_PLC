@@ -1,4 +1,4 @@
-import stylesProducts from "./productos.module.css";
+import stylesProducts from "./ProductsSkeleton.module.css";
 
 const ProductosSkeleton = () => {
   // Genera un array de 8 elementos para mostrar 8 items en el skeleton

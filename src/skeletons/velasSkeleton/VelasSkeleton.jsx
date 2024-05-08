@@ -1,4 +1,4 @@
-import stylesVelas from "./velas.module.css";
+import stylesVelas from "./VelasSkeleton.module.css";
 
 const VelasSkeleton = () => {
     const skeletonItems = Array.from({ length: 4 }, (_, index) => (
